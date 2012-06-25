@@ -1,65 +1,68 @@
 
-			ul#widgets li {
-	
-padding-left:5px;
-padding-right:5px;
+ul#widgets li
+  {
+  padding-left:5px;
+  padding-right:5px;
+  }
 
-			}
+.temp-sub-hoog
+  {
+  left:20px;
+  right:175px;
+  }
 
-
-
-.temp-sub-hoog {
-        left:20px;
-        right:175px;      
-        }  
-              
-.temp-sub-laag { 
-        left:175px;
-        right:20px;     
-        } 
-        
-        
-.radio-text {
-        left:81px;
-        right:7px;
-        } 
-
-.radio-sub {
-        left:6px;
-        right:5px;
-        }
-
-.sprite-nos{ 
-    left:5px;    
-	} 
-	
-	
-	
-.downloads-count-1 {
-        left:35px;
-        right:71px;
-        } 
-
-.downloads-count-2 {
-        left:35px;
-        right:71px;
-        } 
-
-.downloads-count-3 {
-        left:35px;
-        right:71px;
-        } 
- 
- 
- 
+.temp-sub-laag
+  {
+  left:175px;
+  right:20px;
+  }
 
 
-.wind-sub {
-        left:38px;     
-        } 
+.radio-text
+  {
+  left:81px;
+  right:7px;
+  }
 
-.wind-gevoel {
-        left:154px;
-        right:6px;
-        } 
- 
+.radio-sub
+  {
+  left:6px;
+  right:5px;
+  }
+
+.sprite-nos
+  {
+  left:5px;
+	}
+
+
+.downloads-count-1
+  {
+  left:35px;
+  right:71px;
+  }
+
+.downloads-count-2
+  {
+  left:35px;
+  right:71px;
+  }
+
+.downloads-count-3
+  {
+  left:35px;
+  right:71px;
+  }
+
+
+.wind-sub
+  {
+  left:38px;
+  }
+
+.wind-gevoel
+  {
+  left:154px;
+  right:6px;
+  }
+
