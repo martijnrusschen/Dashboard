@@ -1,85 +1,70 @@
 /* BODY */
 
-body{ 
+body{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;	
+    font-size: 15px;
     color: #ffffff;
-    background: rgb(59,66,74); 
+    background: rgb(59,66,74);
     /*  background:rgb(59,66,74)  url(img/back.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
           -o-background-size: cover;
           background-size: cover; */
-    padding: 0px;   
-    margin: 0px;  
-}
+    padding: 0px;
+    margin: 0px;
+  }
 
 .wrap {
     padding-top: 60px; /* 60px WAS 20px */
-}
-
-
-
+  }
 
 /* TOP */
 
 #top-info{
-    width:100%;
-    height:51px;
-    text-align: center;
-    background-color:none; 
-    background-position:center;
-    margin-top: 0px;
-    position: fixed;
-    top: 0;
-    left: 0;
-} 
+  width:100%;
+  height:51px;
+  text-align: center;
+  background-color:none;
+  background-position:center;
+  margin-top: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  }
 
 #top-info{
-    background-image: url('img/top@2x.png');
-    background-repeat:no-repeat;
-
-} 
+  background-image: url('img/top@2x.png');
+  background-repeat:no-repeat;
+  }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-    #top-info {background-image:url(img/top@2x.png);}
-}
+  #top-info {background-image:url(img/top@2x.png);}
+  }
 
-#top-info{background-size:315px 51px;}        
-
-
-
+#top-info{background-size:315px 51px;}
 
 /* TOP TEXT */
 
 .top-text {
-    padding-top: 10px;
-    color:  white;
-    font-size: 21px;
-    font-weight:bold;
-    text-align:center;
-    text-shadow: 0px -1px 0px black; 
-} 
+  padding-top: 10px;
+  color:  white;
+  font-size: 21px;
+  font-weight:bold;
+  text-align:center;
+  text-shadow: 0px -1px 0px black;
+  }
 
 .top-sub {
-    margin-top: -5px;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    text-align:center;
-    text-shadow: 0px 1px 2px black; 
-}         
-
-
-
-
-
-
-
-
+  margin-top: -5px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align:center;
+  text-shadow: 0px 1px 2px black;
+  }
 
 /* BOTTOM */
 
@@ -87,19 +72,19 @@ only screen and (min-device-pixel-ratio: 1.5) {
     width:100%;
     height:25px;
     text-align: center;
-    background-color:none; 
+    background-color:none;
     background-position:center;
     margin-top: 0px;
     position: fixed;
     bottom: 0;
     left: 0;
-} 
+}
 
 #bottom-info{
     background-image: url('img/fade@2x.png');
     background-repeat:repeat-x;
 
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -109,7 +94,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 #bottom-info{background-size:10px 25px;
-}        
+}
 
 
 
@@ -122,8 +107,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
     font-size: 21px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px -1px 0px black; 
-} 
+    text-shadow: 0px -1px 0px black;
+}
 
 .bottom-sub {
     margin-top: -5px;
@@ -131,8 +116,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px black; 
-}   
+    text-shadow: 0px 1px 2px black;
+}
 
 
 /* LINK BLOK */
@@ -168,7 +153,7 @@ ul#widgets li {
     padding-left:14px;
     padding-right:14px;
     padding-bottom:30px; /* 25px WAS 30px */
-    color:rgb(155,157,162); 
+    color:rgb(155,157,162);
     text-shadow: 0px 2px 4px #1b1f2b;
     filter: dropshadow(color=#1b1f2b, offx=0, offy=2);
 }
@@ -183,7 +168,7 @@ ul#widgets li label {
     text-decoration: none;
     text-shadow: 0 1px 1px #000;
     line-height: 16px;
-    color:rgb(155,157,162); 
+    color:rgb(155,157,162);
     text-shadow: 0px 2px 4px #1b1f2b;
     filter: dropshadow(color=#1b1f2b, offx=0, offy=2);
     padding-top:10px;
@@ -194,9 +179,9 @@ ul#widgets li label {
 
 /* LINK OPMAAK */
 
-ul#widgets li label a {        
-    color:rgb(155,157,162); 
-    text-decoration:none; 
+ul#widgets li label a {
+    color:rgb(155,157,162);
+    text-decoration:none;
 }
 
 ul#widgets li label a:focus {
@@ -217,9 +202,9 @@ ul#widgets li label a:active {
 
 /* LINK OPMAAK */
 
-a {        
-    color: #ffffff; 
-    text-decoration:none; 
+a {
+    color: #ffffff;
+    text-decoration:none;
 }
 
 a:focus {
@@ -246,11 +231,11 @@ a:active {
     background: center none;
     background-repeat: no-repeat;
     -webkit-box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
     height: 122px;
     width: 218px;
     -moz-border-radius: 11px;
-    border-radius: 11px; 
+    border-radius: 11px;
     margin: 0px;
 }
 
@@ -258,13 +243,13 @@ a:active {
     background: center white;
     background-repeat: no-repeat;
     -webkit-box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
     height: 544px;
     width: 704px;
     -moz-border-radius: 11px;
-    border-radius: 11px; 
+    border-radius: 11px;
     margin: 0px;
-}        
+}
 
 /*------------------------------------------
                 WIDGETS TEXT
@@ -274,7 +259,7 @@ a:active {
 /* DOWNLOADS WIDGET TEXT */
 
 .counter {
-    top:25px; 
+    top:25px;
     left:0px;
     right:0px;
     position:absolute;
@@ -282,8 +267,8 @@ a:active {
     font-size: 45px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 0px 6px white; 
-} 
+    text-shadow: 0px 0px 6px white;
+}
 
 .counter-sub {
     padding-top: 0px;
@@ -291,8 +276,8 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 0px 6px white; 
-} 
+    text-shadow: 0px 0px 6px white;
+}
 
 
 
@@ -300,7 +285,7 @@ a:active {
 
 .temp-text {
 
-    top:10px; 
+    top:10px;
     left:10px;
     right:0px;
     position:absolute;
@@ -308,21 +293,21 @@ a:active {
     font-size: 65px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue; 
-} 
+    text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue;
+}
 
 .temp-sub {
 
-    top:83px; 
+    top:83px;
     left:0px;
-    right:0px;     
+    right:0px;
     position:absolute;
     color: #ffffff;
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px darkblue; 
-} 
+    text-shadow: 0px 1px 2px darkblue;
+}
 
 .temp-image {
     padding-top: 10px;
@@ -330,8 +315,8 @@ a:active {
     font-size: 65px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue; 
-} 
+    text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue;
+}
 
 .temp-image-sub {
     margin-top: -6px;
@@ -339,8 +324,8 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px darkblue; 
-} 
+    text-shadow: 0px 1px 2px darkblue;
+}
 
 .temp-side-image {
     width:50px;
@@ -348,31 +333,31 @@ a:active {
     margin-top: -68px;
     padding-left: 12px;
     float: left;
-} 
+}
 
 .temp-sub-hoog {
-    top:43px; 
+    top:43px;
     left:29px;
-    right:184px;     
+    right:184px;
     position:absolute;
     color: rgb(45,97,205);
     font-size: 20px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-}  
+    text-shadow: 0px 1px 0px white;
+}
 
 .temp-sub-laag {
-    top:43px; 
+    top:43px;
     left:184px;
-    right:29px;     
+    right:29px;
     position:absolute;
     color: rgb(45,97,205);
     font-size: 20px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 
 
@@ -386,8 +371,8 @@ a:active {
     font-size: 25px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 .stocks-sub {
     margin-top: -35px;
@@ -397,15 +382,15 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:right;
-    text-shadow: 0px 1px 2px darkblue; 
-} 
+    text-shadow: 0px 1px 2px darkblue;
+}
 
 
 
 /* KLOK WIDGET TEXT */
 
 .klok-text {
-    top:10px; 
+    top:10px;
     left:0px;
     right:0px;
     position:absolute;
@@ -413,27 +398,27 @@ a:active {
     font-size: 65px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 2px 2px black; 
-} 
+    text-shadow: 0px 2px 2px black;
+}
 
 .klok-sub {
-    top:85px; 
+    top:85px;
     left:0px;
-    right:0px;     
+    right:0px;
     position:absolute;
     color: #ffffff;
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px black; 
-} 
+    text-shadow: 0px 1px 2px black;
+}
 
 
 /* RADIO WIDGET TEXT */
 
 .radio-text {
 
-    top:23px; 
+    top:23px;
     left:90px;
     right:16px;
     position:absolute;
@@ -442,11 +427,11 @@ a:active {
     font-size: 30px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 2px 2px black; 
-} 
+    text-shadow: 0px 2px 2px black;
+}
 
 .radio-sub {
-    top:88px; 
+    top:88px;
     left:15px;
     right:14px;
     position:absolute;
@@ -454,12 +439,12 @@ a:active {
     font-size: 12px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px black; 
-} 
+    text-shadow: 0px 1px 2px black;
+}
 
-.radio-text a {        
-    color: white; 
-    text-decoration:none; 
+.radio-text a {
+    color: white;
+    text-decoration:none;
 }
 
 /* FRAME WIDGET TEXT */
@@ -470,8 +455,8 @@ a:active {
     font-size: 65px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 2px 2px black; 
-} 
+    text-shadow: 0px 2px 2px black;
+}
 
 .frame-sub1 {
     margin-top: -73px;
@@ -480,7 +465,7 @@ a:active {
     font-size: 20px;
     font-weight: bold;
     text-align:left;
-    text-shadow: 0px 2px 4px black, 0px -1px 1px black; 
+    text-shadow: 0px 2px 4px black, 0px -1px 1px black;
     line-height:100%;
 }
 
@@ -493,8 +478,8 @@ a:active {
     font-size: 53px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 .follow-sub {
     margin-top: 8px;
@@ -502,8 +487,8 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px rgb(24,131,161); 
-} 
+    text-shadow: 0px 1px 2px rgb(24,131,161);
+}
 
 
 /* METER WIDGET TEXT */
@@ -516,16 +501,16 @@ a:active {
     font-size: 13px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px -1px 0px black; 
+    text-shadow: 0px -1px 0px black;
     opacity:0.4;
     filter:alpha(opacity=40); /* For IE8 and earlier */
-} 
+}
 
 
 /* DOWNLOADS WIDGET TEXT */
 
 .nummer {
-    top:40px; 
+    top:40px;
     left:0px;
     right:3px;
     position:absolute;
@@ -534,8 +519,8 @@ a:active {
     font-size: 43px;
     font-weight: normal;
     text-align:center;
-    text-shadow: 0px 0px 6px white; 
-} 
+    text-shadow: 0px 0px 6px white;
+}
 
 .nummer-sub {
     padding-top: 0px;
@@ -543,8 +528,8 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 0px 6px white; 
-} 
+    text-shadow: 0px 0px 6px white;
+}
 
 
 
@@ -561,8 +546,8 @@ a:active {
     font-size: 41px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 0px 6px white; 
-} 
+    text-shadow: 0px 0px 6px white;
+}
 
 .bbq-sub {
     margin-top: -5px;
@@ -570,11 +555,11 @@ a:active {
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 2px black; 
-} 
+    text-shadow: 0px 1px 2px black;
+}
 
 .bbq-text-nieuw {
-    top:45px; 
+    top:45px;
     left:95px;
     right:34px;
     position:absolute;
@@ -582,9 +567,9 @@ a:active {
     font-size: 25px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 3px black; 
+    text-shadow: 0px 1px 3px black;
     text-transform:uppercase;
-} 
+}
 
 
 /* TWITTER WIDGET TEXT */
@@ -592,7 +577,7 @@ a:active {
 
 
 .twitter-followers {
-    top:26px; 
+    top:26px;
     left:15px;
     right:115px;
     color:  rgb(62,155,185);
@@ -600,11 +585,11 @@ a:active {
     font-weight:bold;
     text-align:center;
     text-shadow: 0px 1px 0px white;
-    position:absolute; 
-} 
+    position:absolute;
+}
 
 .twitter-following {
-    top:26px; 
+    top:26px;
     left:115px;
     right:15px;
     color:  rgb(62,155,185);
@@ -613,10 +598,10 @@ a:active {
     text-align:center;
     text-shadow: 0px 1px 0px white;
     position:absolute;
-} 
+}
 
 .twitter-tweets {
-    top:77px; 
+    top:77px;
     left:0px;
     right:0px;
     position:absolute;
@@ -624,8 +609,8 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 
 
@@ -634,7 +619,7 @@ a:active {
 
 
 .twitter-followers-2 {
-    top:26px; 
+    top:26px;
     left:15px;
     right:115px;
     color:  white;
@@ -642,11 +627,11 @@ a:active {
     font-weight:bold;
     text-align:center;
     text-shadow: 0px 1px 1px blue;
-    position:absolute; 
-} 
+    position:absolute;
+}
 
 .twitter-following-2 {
-    top:26px; 
+    top:26px;
     left:115px;
     right:15px;
     color:  white;
@@ -655,10 +640,10 @@ a:active {
     text-align:center;
     text-shadow: 0px 1px 1px blue;
     position:absolute;
-} 
+}
 
 .twitter-tweets-2 {
-    top:77px; 
+    top:77px;
     left:0px;
     right:0px;
     position:absolute;
@@ -666,16 +651,16 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 1px blue; 
-} 
+    text-shadow: 0px 1px 1px blue;
+}
 
 
 
 
 /* TEMPERATUUR WIDGET TEXT */
 
-.dribbble-followers {	
-    top:48px; 
+.dribbble-followers {
+    top:48px;
     left:0px;
     right:0px;
     position:absolute;
@@ -684,38 +669,38 @@ a:active {
     font-weight:bold;
     text-align:center;
     text-shadow: 0px 1px 0px white;
-} 
+}
 
 .dribbble-following {
-    top:52px; 
+    top:52px;
     left:25px;
-    right:163px;     
+    right:163px;
     position:absolute;
     color: grey;
     font-size: 14px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-}  
+    text-shadow: 0px 1px 0px white;
+}
 
 .dribbble-shots {
-    top:52px; 
+    top:52px;
     left:162px;
-    right:25px;     
+    right:25px;
     position:absolute;
     color: grey;
     font-size: 14px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 
 
 /* WWDC WIDGET TEXT */
 
 .wwdc-text {
-    top:10px; 
+    top:10px;
     left:0px;
     right:0px;
     position:absolute;
@@ -723,20 +708,20 @@ a:active {
     font-size: 65px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 2px 2px black; 
-} 
+    text-shadow: 0px 2px 2px black;
+}
 
 .wwdc-sub {
-    top:78px; 
+    top:78px;
     left:0px;
-    right:0px;     
+    right:0px;
     position:absolute;
     color:  rgb(239,240,240);
     font-size: 21px;
     font-weight: normal;
     text-align:center;
-    text-shadow: 0px 0px 2px black; 
-} 
+    text-shadow: 0px 0px 2px black;
+}
 
 
 
@@ -746,7 +731,7 @@ a:active {
 
 
 .downloads-count-1 {
-    top:13px; 
+    top:13px;
     left:46px;
     right:80px;
     position:absolute;
@@ -754,11 +739,11 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 .downloads-count-2 {
-    top:50px; 
+    top:50px;
     left:46px;
     right:80px;
     position:absolute;
@@ -766,11 +751,11 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 .downloads-count-3 {
-    top:87px; 
+    top:87px;
     left:46px;
     right:80px;
     position:absolute;
@@ -778,8 +763,8 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 0px white; 
-} 
+    text-shadow: 0px 1px 0px white;
+}
 
 
 
@@ -787,7 +772,7 @@ a:active {
 /* EK WIDGET TEXT */
 
 .ek-text {
-    top:37px; 
+    top:37px;
     left:0px;
     right:0px;
     font-family: 'Museo-700';
@@ -796,20 +781,20 @@ a:active {
     font-size: 28px;
     font-weight:normal;
     text-align:center;
-    text-shadow:none; 
-} 
+    text-shadow:none;
+}
 
 .ek-sub {
-    top:82px; 
+    top:82px;
     left:0px;
-    right:0px;     
+    right:0px;
     position:absolute;
     color:  rgb(239,240,240);
     font-size: 14px;
     font-weight: bold;
     text-align:center;
-    text-shadow: 0px 0px 2px black; 
-} 
+    text-shadow: 0px 0px 2px black;
+}
 
 
 
@@ -820,7 +805,7 @@ a:active {
 
 .bliep-text {
     font-family: 'Museo-700';
-    top:62px; 
+    top:62px;
     left:0px;
     right:0px;
     position:absolute;
@@ -828,8 +813,8 @@ a:active {
     font-size: 35px;
     font-weight:normal;
     text-align:center;
-    text-shadow: 0px 0px 0px black; 
-} 
+    text-shadow: 0px 0px 0px black;
+}
 
 
 
@@ -863,7 +848,7 @@ a:active {
 /* DAG NACHT WIDGET */
 
 .dag-text {
-    top:90px; 
+    top:90px;
     left:28px;
     right:139px;
     position:absolute;
@@ -871,11 +856,11 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 0px 1px black; 
-} 
+    text-shadow: 0px 0px 1px black;
+}
 
 .nacht-text {
-    top:90px; 
+    top:90px;
     left:139px;
     right:28px;
     position:absolute;
@@ -883,8 +868,8 @@ a:active {
     font-size: 16px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 0px 1px black; 
-} 
+    text-shadow: 0px 0px 1px black;
+}
 
 
 
@@ -892,7 +877,7 @@ a:active {
 /* CURRENCY WIDGET TEXT */
 
 .currency-text-1 {
-    top:30px; 
+    top:30px;
     left:118px;
     right:48px;
     position:absolute;
@@ -900,11 +885,11 @@ a:active {
     font-size: 13px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 3px black; 
-} 
+    text-shadow: 0px 1px 3px black;
+}
 
 .currency-text-2 {
-    top:79px; 
+    top:79px;
     left:118px;
     right:48px;
     position:absolute;
@@ -912,11 +897,11 @@ a:active {
     font-size: 13px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 3px black; 
-} 
+    text-shadow: 0px 1px 3px black;
+}
 
 .currency-text-3 {
-    top:30px; 
+    top:30px;
     left:48px;
     right:118px;
     position:absolute;
@@ -924,11 +909,11 @@ a:active {
     font-size: 13px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 3px black; 
-} 
+    text-shadow: 0px 1px 3px black;
+}
 
 .currency-text-4 {
-    top:79px; 
+    top:79px;
     left:48px;
     right:118px;
     position:absolute;
@@ -936,8 +921,8 @@ a:active {
     font-size: 13px;
     font-weight:bold;
     text-align:center;
-    text-shadow: 0px 1px 3px black; 
-} 
+    text-shadow: 0px 1px 3px black;
+}
 
 
 
@@ -945,7 +930,7 @@ a:active {
 
 .wind-text {
 
-    top:49px; 
+    top:49px;
     left:0px;
     right:0px;
     position:absolute;
@@ -953,8 +938,8 @@ a:active {
     font-size: 19px;
     font-weight:bold;
     text-align:center;
-    text-shadow: none; 
-} 
+    text-shadow: none;
+}
 
 .wind-sub {
     background-image:url(img/wind-arrow.png);
@@ -962,20 +947,20 @@ a:active {
     background-color: none;
     width: 6px;
     height: 30px;
-    top:47px; 
+    top:47px;
     left:47px;
-    right:0px;     
+    right:0px;
     position:absolute;
     color: black;
     font-size: 15px;
     font-weight: bold;
     text-align:center;
-    text-shadow:none; 
-} 
+    text-shadow:none;
+}
 
 .wind-gevoel {
 
-    top:53px; 
+    top:53px;
     left:165px;
     right:16px;
     position:absolute;
@@ -983,8 +968,8 @@ a:active {
     font-size: 14px;
     font-weight:bold;
     text-align:center;
-    text-shadow: none; 
-} 
+    text-shadow: none;
+}
 
 
 /*------------------------------------------
@@ -997,7 +982,7 @@ a:active {
 #knop-test{
     background-image: url('img/test-back.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1006,7 +991,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-test {background-image:url(img/test-back@2x.png);}
 }
 
-#knop-test{background-size:218px 122px;} 
+#knop-test{background-size:218px 122px;}
 
 
 
@@ -1016,7 +1001,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-temp{
     background-image: url('img/temp@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1025,7 +1010,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-temp {background-image:url(img/temp@2x.png);}
 }
 
-#knop-temp{background-size:218px 122px;} 
+#knop-temp{background-size:218px 122px;}
 
 
 
@@ -1035,7 +1020,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-wind{
     background-image: url('img/wind@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1044,7 +1029,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-wind {background-image:url(img/wind@2x.png);}
 }
 
-#knop-wind{background-size:218px 122px;} 
+#knop-wind{background-size:218px 122px;}
 
 
 
@@ -1054,7 +1039,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-klimaat{
     background-image: url('img/klimaat@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1063,7 +1048,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-klimaat {background-image:url(img/klimaat@2x.png);}
 }
 
-#knop-klimaat{background-size:218px 122px;} 
+#knop-klimaat{background-size:218px 122px;}
 
 
 
@@ -1073,7 +1058,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-alarm{
     background-image: url('img/alarm@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1082,7 +1067,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-alarm {background-image:url(img/alarm@2x.png);}
 }
 
-#knop-alarm{background-size:218px 122px;} 
+#knop-alarm{background-size:218px 122px;}
 
 
 
@@ -1092,7 +1077,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-licht{
     background-image: url('img/licht@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1101,7 +1086,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-licht {background-image:url(img/licht@2x.png);}
 }
 
-#knop-licht{background-size:218px 122px;} 
+#knop-licht{background-size:218px 122px;}
 
 
 
@@ -1111,7 +1096,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-zenders{
     background-image: url('img/zenders@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1120,7 +1105,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-zenders {background-image:url(img/zenders@2x.png);}
 }
 
-#knop-zenders{background-size:218px 122px;} 
+#knop-zenders{background-size:218px 122px;}
 
 
 
@@ -1130,7 +1115,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-stocks{
     background-image: url('img/stocks@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1139,7 +1124,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-stocks {background-image:url(img/stocks@2x.png);}
 }
 
-#knop-stocks{background-size:218px 122px;} 
+#knop-stocks{background-size:218px 122px;}
 
 
 
@@ -1150,7 +1135,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-klok{
     background-image: url('img/time@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1159,7 +1144,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-klok {background-image:url(img/time@2x.png);}
 }
 
-#knop-klok{background-size:218px 122px;} 
+#knop-klok{background-size:218px 122px;}
 
 
 
@@ -1169,7 +1154,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-frame{
     background-image: url('img/frame@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1178,7 +1163,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-frame {background-image:url(img/frame@2x.png);}
 }
 
-#knop-frame{background-size:218px 122px;} 
+#knop-frame{background-size:218px 122px;}
 
 #inhoud-frame{
     width:182px;
@@ -1222,7 +1207,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-meter{
     background-image: url('img/meter@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1231,7 +1216,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-meter {background-image:url(img/meter@2x.png);}
 }
 
-#knop-meter{background-size:218px 122px;} 
+#knop-meter{background-size:218px 122px;}
 
 
 
@@ -1241,7 +1226,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-follow{
     background-image: url('img/follow@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1250,7 +1235,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-follow {background-image:url(img/follow@2x.png);}
 }
 
-#knop-follow{background-size:218px 122px;} 
+#knop-follow{background-size:218px 122px;}
 
 
 
@@ -1259,7 +1244,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-switch{
     background-image: url('img/switch@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1268,7 +1253,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-switch {background-image:url(img/switch@2x.png);}
 }
 
-#knop-switch{background-size:218px 122px;} 
+#knop-switch{background-size:218px 122px;}
 
 
 
@@ -1278,7 +1263,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-camera{
     background-image: url('img/camera@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1287,7 +1272,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-camera {background-image:url(img/camera@2x.png);}
 }
 
-#knop-camera{background-size:218px 122px;} 
+#knop-camera{background-size:218px 122px;}
 
 
 
@@ -1298,7 +1283,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-radio{
     background-image: url('img/radio@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1307,7 +1292,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-radio {background-image:url(img/radio@2x.png);}
 }
 
-#knop-radio{background-size:218px 122px;} 
+#knop-radio{background-size:218px 122px;}
 
 
 
@@ -1316,7 +1301,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-nummer{
     background-image: url('img/number@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1325,7 +1310,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-nummer {background-image:url(img/number@2x.png);}
 }
 
-#knop-nummer{background-size:218px 122px;} 
+#knop-nummer{background-size:218px 122px;}
 
 
 
@@ -1335,7 +1320,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-bbq{
     background-image: url('img/bbq@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1344,7 +1329,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-bbq {background-image:url(img/bbq@2x.png);}
 }
 
-#knop-bbq{background-size:218px 122px;} 
+#knop-bbq{background-size:218px 122px;}
 
 
 
@@ -1355,7 +1340,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-twitter{
     background-image: url('img/twitter@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1364,7 +1349,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-twitter{background-image:url(img/twitter@2x.png);}
 }
 
-#knop-twitter{background-size:218px 122px;} 
+#knop-twitter{background-size:218px 122px;}
 
 
 
@@ -1373,7 +1358,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-twitter-nieuw{
     background-image: url('img/twitter-nieuw@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1382,7 +1367,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-twitter-nieuw{background-image:url(img/twitter-nieuw@2x.png);}
 }
 
-#knop-twitter-nieuw{background-size:218px 122px;} 
+#knop-twitter-nieuw{background-size:218px 122px;}
 
 
 
@@ -1392,7 +1377,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-dribbble{
     background-image: url('img/dribbble@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1401,7 +1386,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-dribbble{background-image:url(img/dribbble@2x.png);}
 }
 
-#knop-dribbble{background-size:218px 122px;} 
+#knop-dribbble{background-size:218px 122px;}
 
 
 
@@ -1410,7 +1395,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-wwdc{
     background-image: url('img/wwdc@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1419,7 +1404,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-wwdc{background-image:url(img/wwdc@2x.png);}
 }
 
-#knop-wwdc{background-size:218px 122px;} 
+#knop-wwdc{background-size:218px 122px;}
 
 
 
@@ -1431,7 +1416,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-downloads-ios{
     background-image: url('img/downloads-ios@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1440,7 +1425,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-downloads-ios{background-image:url(img/downloads-ios@2x.png);}
 }
 
-#knop-downloads-ios{background-size:218px 122px;} 
+#knop-downloads-ios{background-size:218px 122px;}
 
 
 
@@ -1452,7 +1437,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-analoog{
     background-image: url('img/klok-analoog@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1461,7 +1446,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-analoog{background-image:url(img/klok-analoog@2x.png);}
 }
 
-#knop-analoog{background-size:218px 122px;} 
+#knop-analoog{background-size:218px 122px;}
 
 
 
@@ -1472,7 +1457,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-tv{
     background-image: url('img/tv@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1481,7 +1466,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-tv {background-image:url(img/tv@2x.png);}
 }
 
-#knop-tv{background-size:218px 122px;} 
+#knop-tv{background-size:218px 122px;}
 
 
 
@@ -1491,7 +1476,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-bliep{
     background-image: url('img/bliep@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1500,7 +1485,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-bliep{background-image:url(img/bliep@2x.png);}
 }
 
-#knop-bliep{background-size:218px 122px;} 
+#knop-bliep{background-size:218px 122px;}
 
 
 
@@ -1510,7 +1495,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-ek{
     background-image: url('img/ek@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1519,7 +1504,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-ek{background-image:url(img/ek@2x.png);}
 }
 
-#knop-ek{background-size:218px 122px;} 
+#knop-ek{background-size:218px 122px;}
 
 
 /* CURRENCY WIDGET */
@@ -1527,7 +1512,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 #knop-currency{
     background-image: url('img/currency@2x.png');
     background-repeat:no-repeat;
-} 
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1536,7 +1521,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #knop-currency{background-image:url(img/currency@2x.png);}
 }
 
-#knop-currency{background-size:218px 122px;} 
+#knop-currency{background-size:218px 122px;}
 
 
 
@@ -1545,9 +1530,9 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 #knop-weer{
     background-repeat:no-repeat;
-} 
+}
 
-#knop-weer{background-size:218px 122px;} 
+#knop-weer{background-size:218px 122px;}
 
 
 
@@ -1555,7 +1540,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 /* METER */
 
 progress strong {
-    display: none;	
+    display: none;
 }
 
 progress.example_r + .arrow {
@@ -1574,7 +1559,7 @@ progress.example_r + .arrow {
     -ms-transform-origin: 50% 100%;
     -o-transform-origin: 50% 100%;
 
-    transition: transform 500ms;	
+    transition: transform 500ms;
 }
 
 progress.example_r + .arrow.noTransition {
@@ -1584,7 +1569,7 @@ progress.example_r + .arrow.noTransition {
     -ms-transition: none;
     -o-transition: none;
     transition: none;
-} 
+}
 
 /*
  * Example R: Possible Rotation
@@ -1595,7 +1580,7 @@ progress.example_r {
 
 
 
-    /* gets rid of default border in Firefox and Opera. */ 
+    /* gets rid of default border in Firefox and Opera. */
     border: solid 0px black;
     display: inline-block;
     border-radius: 218px 218px 0 0;
@@ -1621,7 +1606,7 @@ progress.example_r {
 progress.example_r[value="0"] + .arrow {
     -moz-transform: rotate(270deg);
     -webkit-transform: rotate(270deg);-o-transform: rotate(270deg);-ms-transform: rotate(270deg);
-}	
+}
 
 progress.example_r[value^="1"]:not([value="1"]):not([value="100"]) + .arrow {
     -moz-transform: rotate(288deg);
@@ -1676,12 +1661,12 @@ progress.example_r[value="100"] + .arrow {
 
 
 /*
- * Background of the progress bar value 
+ * Background of the progress bar value
 */
 
 /* Firefox */
-progress.example_r::-moz-progress-bar { 
-    background: transparent;	
+progress.example_r::-moz-progress-bar {
+    background: transparent;
 }
 
 /* Chrome */
@@ -1747,68 +1732,32 @@ input {
 
 /* NOS WEER */
 
-.sprite-nos{ 
-    top:15px; 
-    left:14px;    
+.sprite-nos{
+    top:15px;
+    left:14px;
     position:absolute;
     background-image: url('http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif');
     background-size: 270px auto;
-    background-position: 0 -15px; 
-    width: 71px; 
-    height: 16px; 
+    background-position: 0 -15px;
+    width: 71px;
+    height: 16px;
     display: block;
-} 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================================================  
+/* ================================================
                   EXTRA MENU TOPBAR
-   ================================================  */         
+   ================================================  */
 
-#extra-menu{ 
+#extra-menu{
     display:none;
-} 
+}
 
 
-/* ================================================  
+/* ================================================
                       BETA TOPBAR
    ================================================  */
 
-#topbar-extra{ 
+#topbar-extra{
     padding-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
@@ -1820,34 +1769,32 @@ input {
     line-height:150%;
 }
 
-
-
-.grid_extra{ 
+.grid_extra{
     background: black url(http://basvanderploeg.nl/images/extra-menu-back.png);
     background-repeat:repeat-x;
-    width:100%; 
+    width:100%;
     overflow: block;
 }
 
 
 
-//.grid_extra{ 
+//.grid_extra{
     //	     background: black url(img/back-linen.png) bottom;
     //	     background-size: 150px 300px;
     //       background-repeat:repeat-x;
-    //	     width:100%; 
+    //	     width:100%;
     //       overflow: block;
     //         }
 
 
 
-.extra-img{ 
+.extra-img{
     background: url(http://basvanderploeg.nl/images/extra-image.png);
     background-repeat: none;
     height: 220px;
     width: 162px;
     overflow: block;
-}  
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -1856,34 +1803,34 @@ only screen and (min-device-pixel-ratio: 1.5) {
     .extra-img {background-image:url(./images/extra-image@2x.png);}
 }
 
-.extra-img {background-size:162px 220px;}                
+.extra-img {background-size:162px 220px;}
 
-#extra-text{ 
+#extra-text{
     padding-left: 0px;
     padding-top:60px;
     text-align: center;
     color: white;
-    text-shadow: 0px 1px 0px black; 
+    text-shadow: 0px 1px 0px black;
     filter: dropshadow(color=black, offx=0, offy=1);
-} 
+}
 
-#extra-text-links{ 
+#extra-text-links{
     padding-top: 50px;
     text-align: right;
     color: white;
-    text-shadow: 0px 1px 0px black; 
+    text-shadow: 0px 1px 0px black;
     filter: dropshadow(color=black, offx=0, offy=1);
-} 
+}
 
 #extra-text a:link {color: lightgrey; text-decoration:none; }       /* unvisited link  */
 #extra-text a:visited {color: lightgrey; text-decoration:none;}    /* visited link    */
 #extra-text a:hover {color: white; text-decoration:none;}         /* mouse over link */
-#extra-text a:active {color:white; text-decoration:none;}     /* selected link   */    
+#extra-text a:active {color:white; text-decoration:none;}     /* selected link   */
 
 #extra-text-links a:link {color: lightgrey; text-decoration:none; }       /* unvisited link  */
 #extra-text-links a:visited {color: lightgrey; text-decoration:none;}    /* visited link    */
 #extra-text-links a:hover {color: white; text-decoration:none;}         /* mouse over link */
-#extra-text-links a:active {color:white; text-decoration:none;}     /* selected link   */  
+#extra-text-links a:active {color:white; text-decoration:none;}     /* selected link   */
 
 
 
@@ -1926,14 +1873,9 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 p {
-    text-align: center; 
+    text-align: center;
     padding: 0px 0 0 0;
 }
-
-
-
-
-
 
 .bubble {
     width: 25px;
@@ -1953,7 +1895,7 @@ p {
     text-align: center;
     font-size: 17px;
     font-weight:bold;
-    text-shadow: 0px 0px 0px black; 
+    text-shadow: 0px 0px 0px black;
 
     background: #f3888b; /* Old browsers */
     background: -moz-linear-gradient(top,  #f3888b 0%, #c90e17 100%); /* FF3.6+ */
@@ -1964,9 +1906,9 @@ p {
     background: linear-gradient(top,  #f3888b 0%,#c90e17 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3888b', endColorstr='#c90e17',GradientType=0 ); /* IE6-9 */
 
-    top:-9px; 
+    top:-9px;
     left:216px;
-    right:0px;     
-    position:absolute;	
+    right:0px;
+    position:absolute;
 }
 
