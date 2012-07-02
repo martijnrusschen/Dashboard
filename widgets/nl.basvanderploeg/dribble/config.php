@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Dribbble
+ * Dribble
  * 
  * @author Bas van der Ploeg
  * @see http://www.basvanderploeg.nl 
  */
 
-$config['nl.basvanderploeg']['dribbble'] = array(
+$config['nl.basvanderploeg']['dribble'] = array(
     'enabled' => true,
     'label' => 'Dribbble Volgers',
     'data' => array(
         array(
             'enabled' => true,
-            'label' => 'Dribbble - Bas van der Ploeg',
+            'label' => 'Dribble - Bas van der Ploeg',
             'username' => 'basvanderploeg'
         )
     )

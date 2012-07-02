@@ -4,27 +4,11 @@
     <li>
         <div class="box" id="knop-currency"> 
             <div class="currency-text-1">    
-                <?php
-                $url = 'http://currency-api.appspot.com/api/USD/EUR.json?key=' . $config['nl.basvanderploeg']['wisselkoers']['api-key']; 
-                $result = file_get_contents($url);
-                $result = json_decode($result);
-
-                if ($result->success) {
-                    echo $result->rate;
-                }
-                ?>   
+                <?php echo @file_get_contents('http://download.finance.yahoo.com/d/quotes.csv?s=EURUSD=X&f=l1'); ?>  
             </div> 
 
             <div class="currency-text-2">   
-                <?php
-                $url = 'http://currency-api.appspot.com/api/EUR/USD.json?key=' . $config['nl.basvanderploeg']['wisselkoers']['api-key']; 
-                $result = file_get_contents($url);
-                $result = json_decode($result);
-
-                if ($result->success) {
-                    echo $result->rate;
-                }
-                ?>
+                <?php echo @file_get_contents('http://download.finance.yahoo.com/d/quotes.csv?s=USDEUR=X&f=l1'); ?>
             </div>
 
             <div class="currency-text-3">1.00</div>

@@ -11,8 +11,7 @@
 
 $config['nl.basvanderploeg']['wisselkoers'] = array(
     'enabled' => true,
-    'label' => 'Wisselkoers',
-    'api-key' => ''
+    'label' => 'Wisselkoers'
 );
 
 ?>

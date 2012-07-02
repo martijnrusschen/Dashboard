@@ -34,17 +34,19 @@
 
     <!-- JavaScript -->
     <script type="text/javascript">
-        function GetClock(){
+        function getClock(){
             d = new Date();
             nhour = d.getHours();
             nmin = d.getMinutes();
             if(nmin <= 9){ nmin = "0" + nmin}
 
             document.getElementById('clockbox').innerHTML = "" + nhour + ":" + nmin + "";
-            setTimeout("GetClock()", 1000);
+            setTimeout("getClock()", 1000);
         }
         
-        document.ready = GetClock;
+        $(document).ready(function() {
+            getClock();
+        });
     </script>
     <!-- END -->
 <?php } ?>

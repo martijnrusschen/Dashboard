@@ -16,23 +16,12 @@
         
         $tzoffset = date("Z") / 60 / 60;
         
-        function day_or_night() {
-            // determine if it is 'night' or 'day'
-            // returns string: 'night' or 'day'
-            global $latitude, $longitude, $tzoffset, $zenith;
+        // detirmine if it is day/night
+        $sunrise_epoch = date_sunrise(time(), SUNFUNCS_RET_TIMESTAMP, $latitude, $longitude, $zenith, $tzoffset);
+        $sunset_epoch = date_sunset(time(), SUNFUNCS_RET_TIMESTAMP, $latitude, $longitude, $zenith, $tzoffset);
+        $time_epoch = time();
 
-            $sunrise_epoch = date_sunrise(time(), SUNFUNCS_RET_TIMESTAMP, $latitude, $longitude, $zenith, $tzoffset);
-            $sunset_epoch = date_sunset(time(), SUNFUNCS_RET_TIMESTAMP, $latitude, $longitude, $zenith, $tzoffset);
-            $time_epoch = time(); // time now
-
-            if ($time_epoch >= $sunset_epoch or $time_epoch <= $sunrise_epoch) {
-                return 'night';
-            } else {
-                return 'day';
-            }
-        }
-
-        $dayornight = day_or_night();
+        $dayornight = ($time_epoch >= $sunset_epoch or $time_epoch <= $sunrise_epoch) ? 'nacht' : 'dag';
 
         // determine sunrise time
         $sunrise = date_sunrise(time(), SUNFUNCS_RET_STRING, $latitude, $longitude, $zenith, $tzoffset);
@@ -60,7 +49,7 @@
     <!-- CSS -->
     <style type="text/css">
         #knop-dagnacht{
-            background-image: url("res/nl.basvanderploeg/core/img/nu-<?php echo ($dayornight == 'night') ? 'nacht' : 'dag'; ?>.png");
+            background-image: url("res/nl.basvanderploeg/core/img/nu-<?php echo $dayornight; ?>.png");
             background-repeat:no-repeat;
         } 
 
@@ -69,7 +58,7 @@
         only screen and (min--moz-device-pixel-ratio: 1.5),
         only screen and (min-device-pixel-ratio: 1.5) {
             #knop-dagnacht {
-                background-image:url("res/nl.basvanderploeg/core/img/nu-<?php echo ($dayornight == 'night') ? 'nacht' : 'dag'; ?>.png");
+                background-image:url("res/nl.basvanderploeg/core/img/nu-<?php echo $dayornight; ?>.png");
             }
         }
 

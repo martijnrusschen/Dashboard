@@ -1,7 +1,7 @@
 <?php if (defined('BAS')) require dirname(__FILE__) . DS . 'config.php'; else die(); ?>
 <?php if (isset($config['nl.basvanderploeg']['klok_analoog']) && $config['nl.basvanderploeg']['klok_analoog']['enabled']) { ?>
     <!-- HTML / PHP -->
-    <li>
+    <li id="nl-basvanderploeg-klok_analoog">
         <div class="box" id="knop-analoog">
 
             <div id="clock">	
@@ -48,7 +48,6 @@
                 $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
 
             }, 1000 );
-
         }); 
     </script>
     <!-- END -->

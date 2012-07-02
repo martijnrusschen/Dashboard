@@ -7,57 +7,162 @@
  * @author Alex Bouma
  * @see http://www.alexbouma.me
  */
-
 class Dashboard {
     
-    private $ignore_dirs = array('.svn', '.', '..');
-    private $configuration;
-    private $widgets;
+    private $config, $widgets;
     
+    /**
+     * Constructor 
+     */
     public function __construct() {
-        $this->configuration = new Configuration();
+        session_start();
+        
+        $this->config = new Configuration();
         $this->widgets = array();
-        
-        $base = $this->configuration->widgets_dir;
-        $this->_checkDir($base);
-        
-        if ($this->configuration->do_sort) $this->widgets = $this->_sortArrayByArray($this->widgets, $this->configuration->sort);
     }
     
+    /**
+     * Init het Dashboard laad alle widgets 
+     */
+    public function init() {
+        $s = new Search($this->config->widgets_dir);
+        $this->widgets = array_merge($this->widgets, $s->findWidgets());
+        
+        if ($this->config->do_sort) $this->widgets = $this->_sortArrayByArray($this->widgets, $this->config->sort);
+    }
+    
+    /**
+     * Authenticatie challenge
+     */
+    public function auth() {
+        if ($this->config->auth) {
+            if ($_SESSION['loggedin'] == 0) {
+                header('Location: ' . $this->config->auth_login);
+                die();
+            }
+        }
+    }
+    
+    /**
+     * Login a user
+     * @param string $username
+     * @param string $password 
+     */
+    public function login($username, $password) {
+        if (isset($this->config->auth_users[$username])) {
+            if ($this->config->auth_users[$username] == $password) {
+                unset($_SESSION['login_error']);
+                $_SESSION['loggedin'] = 1;
+                
+                header('Location: ' . $this->config->homepage);
+                die();
+            } else {
+                $_SESSION['login_error'] = $this->config->auth_wrong_password;
+            }
+        } else {
+            $_SESSION['login_error'] = $this->config->auth_wrong_username;
+        }
+        $_SESSION['loggedin'] = 0;
+    }
+    
+    /**
+     * Outputs all the widgets 
+     */
     public function go() {
         if (count($this->widgets) <= 0) {
             die('Ooops - Geen widgets gevonden');
         } else {
-            foreach ($this->widgets as $widget => $path) {
-                include $path;
-            }
+            $this->_loadWidgets($this->config->ajax_load);
         }
     }
     
-    private function _checkDir($path) {
-        if ($handle = opendir($path)) {
-            while (false !== ($entry = readdir($handle))) {
-                $cur_dir = $path;
+    /**
+     * Catch een request voor een specifieke widget 
+     */
+    public function catchRequest() {
+        if ($this->config->catch) {
+            $catched = false;
+            
+            if (isset($_GET['id'])) {
+                $id = str_replace('/', '.', $_GET['id']);
+                $f = (isset($_GET['f'])) ? true : false;
+
                 
-                if (!in_array($entry, $this->ignore_dirs)) {
-                    $cur_dir .= DS . $entry;
-                    
-                    if (is_dir($cur_dir)) {
-                        $this->_checkDir($cur_dir);
+                $tmp = explode('.', $id);
+                $name = $tmp[count($tmp) - 1];
+                unset($tmp[count($tmp) - 1]);
+                $developer = implode('.', $tmp);
+                
+                $widget = new Widget($name, $developer);
+                
+                if ($widget->exists()) {
+                    if (!isset($_GET['a'])) {
+                        $output = $this->_getOutput($widget->getWidgetFile());
+                        echo ($f) ? $output : $this->_parseWidget($output); 
+                    } else if (isset($_GET['a']) && $widget->isValidAction($_GET['a'])) {
+                        $this->_outputJSON(array('success' => 'Execution successful', 'output' => $this->_getOutput($widget->getActionFile($_GET['a']))));
                     } else {
-                        if (is_file($cur_dir)) {
-                            $temp = explode(DS, $cur_dir);
-                            
-                            if ($temp[count($temp) - 1] == 'widget.php') {
-                                $name = explode(DS, $cur_dir);
-                                $name = $name[count($name) - 3] . '.' . $name[count($name) - 2];
-                                $this->widgets[$name] = $cur_dir;
-                            }
-                        }
+                        $this->_outputJSON(array('error' => 'Invalid Request!', 'code' => 'A-404'));
                     }
+                } else {
+                    $this->_outputJSON(array('error' => 'Invalid Request!', 'code' => 'W-404'));
                 }
+                
+                $catched = true;
+            } else if (isset($_GET['preload'])) {
+                $this->_preloadImages();
+                $catched = true;
+            }
+            
+            if ($catched) die();
+        }
+    }
+    
+    private function _preloadImages() {
+        $output = array();
+
+        if ($this->config->preload) {
+            $this->init();
+            
+            foreach ($this->widgets as $widget) {
+                $output = array_merge($output, $widget->getImagePaths());
+            }
+            
+            $s = new Search($this->config->resource_dir . DS . $this->config->core_img_search);
+            $output = array_merge($output, $s->findImages());
+        }
+        
+        $this->_outputJSON($output);
+    }
+    
+    private function _loadWidgets($ajax) {
+        if ($ajax) {
+            echo '<script>'; 
+            if ($this->config->wait_for_dom) { echo '$(document).ready(function() { '; }
+            foreach ($this->widgets as $name => $widget) {
+                echo '$.get(\'index.php?id=' . $name . '&f\', function(data) { $(\'#widgets\').append(data); });';
+            }
+            if ($this->config->wait_for_dom) { echo ' });'; }
+            echo '</script>';
+        } else {
+            foreach ($this->widgets as $name => $widget) {
+                include $widget->getWidgetFile();
             }
         }
+    }
+    private function _parseWidget($content) {
+        libxml_use_internal_errors(true);
+        $output = '';
+        
+        $doc = new DOMDocument();
+        $doc->loadHTML($content . ' ');
+        $elements = $doc->getElementsByTagName('li');
+        
+        foreach($elements as $element) {
+            $output .= $doc->saveHTML($element);
+        }
+        
+        return $output;
     }
     
     private function _sortArrayByArray($array, $orderby) {
@@ -72,7 +177,19 @@ class Dashboard {
         
         return $ordered + $array;
     }
-
+    private function _outputJSON($data) {
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        die();
+    }
+    private function _getOutput($path) {
+        ob_start();
+        include $path;
+        $output = ob_get_contents();
+        ob_end_clean();
+        return $output;
+    }
+    
 }
 
 ?>

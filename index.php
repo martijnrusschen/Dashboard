@@ -2,11 +2,19 @@
 define('BAS', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
-require 'configuration.php';
-require 'lib' . DS . 'dashboard.php';
+require 'Configuration.php';
+require 'lib' . DS . 'Dashboard.php';
+require 'lib' . DS . 'Widget.php';
+require 'lib' . DS . 'Search.php';
 
 $configuration = new Configuration();
 $dash = new Dashboard();
+
+$dash->auth();
+
+$dash->catchRequest();
+
+$dash->init();
 
 ?>
 <!DOCTYPE html>
@@ -25,8 +33,8 @@ $dash = new Dashboard();
         <meta name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0'/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />  
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icon-144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon-144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="res/nl.basvanderploeg/core/img/icon-144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="res/nl.basvanderploeg/core/img/icon-144.png" />
 
         <link href="res/nl.basvanderploeg/core/img/iphone-landscape@2x.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
         <link href="res/nl.basvanderploeg/core/img/ipad-portrait@2x.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
@@ -42,6 +50,7 @@ $dash = new Dashboard();
         <!--<![endif]-->
         
         <script type="text/javascript" src="res/nl.basvanderploeg/core/js/jquery.js"></script>
+        <script type="text/javascript" src="res/me.alexbouma/core/js/core.js"></script>
     </head>
     <body>
         <div class="wrap">
