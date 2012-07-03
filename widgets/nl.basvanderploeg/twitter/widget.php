@@ -5,7 +5,7 @@
     if (isset($config['nl.basvanderploeg']['twitter']['data']) && is_array($config['nl.basvanderploeg']['twitter']['data'])) {
         foreach ($config['nl.basvanderploeg']['twitter']['data'] as $data) {
             if ($data['enabled']) {
-                $xml = simplexml_load_file('https://twitter.com/users/show/' . $data['username']);
+                $xml = simplexml_load_file('http://twitter.com/users/show/' . $data['username']);
                 ?>
                 <li>
                     <div class="box" id="knop-twitter">
