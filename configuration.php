@@ -44,7 +44,7 @@ class Configuration {
      */
     // Zet het sorteren van de widgets aan of uit
     // LET OP: Staat AJAX laden van widgets aan dan kan de sortering veranderen
-    public $do_sort = false;
+    public $do_sort = true;
     
     // Sorteer de widgets op basis van deze array
     // Sorteren doe je mbv. de volledige widget naam bv. nl.basvanderploeg.temperatuur
@@ -58,11 +58,15 @@ class Configuration {
      * AJAX
      */
     // Laad widgets a-synchroon bij opstarten (Versneld laadtijd)
-    // LET OP: Kan de sortering veranderen & afbeeldingen kunnen even op zich laten wachten
+    // LET OP: Afbeeldingen kunnen even op zich laten wachten
     public $ajax_load = true;
     
     // Moeten de widgets wachten op het document of kunnen ze gelijk laden?
     public $wait_for_dom = true;
+    
+    // Laat een spinner zien terwijl de widget laad
+    // LET OP: Als deze optie is uitgeschakeld kan het zijn dat de sortering niet 100% klopt
+    public $ajax_placeholder = true;
     
     /**
      * Caching 

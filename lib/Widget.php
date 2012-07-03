@@ -28,6 +28,8 @@ class Widget {
     
     public function getName() { return $this->name; }
     public function getDeveloper() { return $this->developer; }
+    public function getFullName() { return $this->getDeveloper() . '.' . $this->getName(); }
+    public function getID() { return str_replace('.', '-', $this->getFullName()); }
     
     public function getWidgetPath() { return $this->config->widgets_dir . DS . $this->developer . DS . $this->name; }
     public function getResourcePath() { return $this->config->resource_dir . DS . $this->developer . DS . $this->name; }
@@ -36,6 +38,10 @@ class Widget {
     public function getWidgetFile() { return $this->getWidgetPath() . DS . $this->config->widget_file; }
     public function getWidgetConfig() { return $this->getWidgetPath() . DS . $this->config->widget_config; }
     public function getActionFile($action) { return $this->getActionPath() . DS . $action . $this->config->action_ext; }
+    
+    public function getPlaceholder() {
+        return '<li id="' . $this->getID() . '"><div class="box"></div><label>Laden...</label></li>';
+    }
     
     public function exists() { return (file_exists($this->getWidgetFile()) && file_exists($this->getWidgetConfig())); }
     

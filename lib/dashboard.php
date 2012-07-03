@@ -72,7 +72,7 @@ class Dashboard {
         if (count($this->widgets) <= 0) {
             die('Ooops - Geen widgets gevonden');
         } else {
-            $this->_loadWidgets($this->config->ajax_load);
+            $this->_loadWidgets();
         }
     }
     
@@ -135,15 +135,34 @@ class Dashboard {
         $this->_outputJSON($output);
     }
     
-    private function _loadWidgets($ajax) {
-        if ($ajax) {
-            echo '<script>'; 
-            if ($this->config->wait_for_dom) { echo '$(document).ready(function() { '; }
-            foreach ($this->widgets as $name => $widget) {
-                echo '$.get(\'index.php?id=' . $name . '&f\', function(data) { $(\'#widgets\').append(data); });';
+    private function _loadWidgets() {
+        if ($this->config->ajax_load) {
+            if ($this->config->ajax_placeholder) {
+                foreach ($this->widgets as $name => $widget) {
+                    echo $widget->getPlaceholder();
+                }
+                
+                echo '<script>'; 
+                echo ($this->config->wait_for_dom) ? '$(document).ready(function() { ' : '';
+                
+                foreach ($this->widgets as $name => $widget) {
+                    echo 'spinme(\'' . $widget->getID() . '\');';
+                    echo 'loadMe(\'' . $widget->getFullName() . '\');';
+                }
+                
+                echo ($this->config->wait_for_dom) ? ' });' : '';
+                echo '</script>';
+            } else {
+                echo '<script>'; 
+                echo ($this->config->wait_for_dom) ? '$(document).ready(function() { ' : '';
+            
+                foreach ($this->widgets as $name => $widget) {
+                    echo '$.get(\'index.php?id=' . $name . '&f\', function(data) { $(\'#widgets\').append(data); });';
+                }
+                
+                echo ($this->config->wait_for_dom) ? ' });' : '';
+                echo '</script>';
             }
-            if ($this->config->wait_for_dom) { echo ' });'; }
-            echo '</script>';
         } else {
             foreach ($this->widgets as $name => $widget) {
                 include $widget->getWidgetFile();
