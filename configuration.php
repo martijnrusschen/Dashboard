@@ -21,7 +21,7 @@ class Configuration {
     public $author = 'Bas van der Ploeg - www.basvanderploeg.nl';
     
     // Google Analytics trackincode (bv. UA-2044578-1)
-    public $analytics = 'UA-2044578-1';
+    public $analytics = 'UA-code';
     
     /**
      * Security 
