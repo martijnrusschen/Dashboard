@@ -44,8 +44,7 @@ $dash->init();
         <link href="res/nl.basvanderploeg/core/img/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait)" rel="apple-touch-startup-image"/>
         <link href="res/nl.basvanderploeg/core/img/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape)" rel="apple-touch-startup-image"/>
 
-        <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Questrial|Oleo+Script' rel='stylesheet' type='text/css'>
         
         <link rel="stylesheet" href="res/nl.basvanderploeg/core/css/style.css" media="screen" />
         <link rel="stylesheet" href="res/me.alexbouma/core/css/style.css" media="screen" />
@@ -54,7 +53,6 @@ $dash->init();
         <link rel="stylesheet" href="res/nl.basvanderploeg/core/css/iphone.css" media="only screen and (max-device-width: 480px)" type="text/css" />
         <!--<![endif]-->
         
-        <script type="text/javascript" src="res/nl.basvanderploeg/core/js/jquery.js"></script>
         <script type="text/javascript" src="res/me.alexbouma/core/js/core.js"></script>
     </head>
     <body>

@@ -28,7 +28,10 @@ class Dashboard {
         $s = new Search($this->config->widgets_dir);
         $this->widgets = array_merge($this->widgets, $s->findWidgets());
         
-        if ($this->config->do_sort) $this->widgets = $this->_sortArrayByArray($this->widgets, $this->config->sort);
+        if ($this->config->do_sort) {
+            ksort($this->widgets);
+            $this->widgets = $this->_sortArrayByArray($this->widgets, $this->config->sort); 
+        }
     }
     
     /**
