@@ -7,9 +7,9 @@
  * @see http://www.basvanderploeg.nl 
  */
 
-$config['nl.basvanderploeg']['radio'] = array(
+$config['nl.basvanderploeg']['radio_3fm'] = array(
     'enabled' => true,
-    'label' => 'Radio'
+    'label' => 'Radio 3FM'
 );
 
 ?>

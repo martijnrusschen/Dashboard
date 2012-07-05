@@ -1,5 +1,5 @@
 <?php if (defined('BAS')) require dirname(__FILE__) . DS . 'config.php'; else die(); ?>
-<?php if (isset($config['nl.basvanderploeg']['radio']) && $config['nl.basvanderploeg']['radio']['enabled']) { ?>
+<?php if (isset($config['nl.basvanderploeg']['radio_3fm']) && $config['nl.basvanderploeg']['radio_3fm']['enabled']) { ?>
     <!-- HTML / PHP -->
     <li>
         <div class="box" id="knop-radio">
@@ -16,7 +16,7 @@
             </div>
 
         </div>
-        <label><a href="http://colo1.seeas.omroep.nl:8000/3fmh.aac"><?php echo $config['nl.basvanderploeg']['radio']['label'] ?></a></label>
+        <label><a href="http://colo1.seeas.omroep.nl:8000/3fmh.aac"><?php echo $config['nl.basvanderploeg']['radio_3fm']['label'] ?></a></label>
     </li>
     <!-- END -->
 
