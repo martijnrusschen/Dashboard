@@ -1,18 +1,18 @@
 <?php if (defined('BAS')) require dirname(__FILE__) . DS . 'config.php'; else die(); ?>
-<?php if (isset($config['nl.basvanderploeg']['weerkaart']) && $config['nl.basvanderploeg']['weerkaart']['enabled']) { ?>
+<?php if (isset($config['nl.basvanderploeg']['weerkaart_nos']) && $config['nl.basvanderploeg']['weerkaart_nos']['enabled']) { ?>
     <!-- HTML / PHP -->
     <li>
-        <div class="box" id="nl-basvanderploeg-weerkaart" >
-            <a class="link-block" href="http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif" target="_blank"></a>
-            <a href="http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif" class="sprite-nos"></a>
+        <div class="box" id="nl-basvanderploeg-weerkaart_nos" >
+            <a class="link-block" href="<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>" target="_blank"></a>
+            <a href="<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>" target="_blank" class="sprite-nos"></a>
         </div>
-        <label><?php echo $config['nl.basvanderploeg']['weerkaart']['label']; ?></label>
+        <label><?php echo $config['nl.basvanderploeg']['weerkaart_nos']['label']; ?></label>
     </li>
     <!-- END -->
 
     <!-- CSS -->
     <style type="text/css" >
-        #nl-basvanderploeg-weerkaart {
+        #nl-basvanderploeg-weerkaart_nos {
             background-image: url('http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif');
             background-size:218px auto;
             background-position: 46% 54%;
@@ -21,7 +21,7 @@
             top:15px; 
             left:14px;    
             position:absolute;
-            background-image: url('http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif');
+            background-image: url('<?php echo $config['nl.basvanderploeg']['weerkaart']['imageURL']; ?>');
             background-size: 270px auto;
             background-position: 0 -15px; 
             width: 71px; 
