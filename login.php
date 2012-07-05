@@ -2,11 +2,13 @@
 define('BAS', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
-require 'configuration.php';
-require 'lib' . DS . 'dashboard.php';
+require 'Configuration.php';
+require 'lib' . DS . 'Dashboard.php';
 
 $configuration = new Configuration();
 $dash = new Dashboard();
+
+if (!$configuration->auth) { header('Location: index.php'); }
 
 if (isset($_POST['username'], $_POST['password'])) {
     $dash->login($_POST['username'], $_POST['password']);
