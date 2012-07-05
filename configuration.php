@@ -3,9 +3,6 @@
 
 /**
  * Configuratiebestand voor je Dashboard
- * 
- * @author Bas van der Ploeg 
- * @see http://www.basvanderploeg.nl
  */
 
 class Configuration {
@@ -17,8 +14,8 @@ class Configuration {
     public $title = 'Dashboard';
     
     // Meta - Description & Author
-    public $description = 'Dashboard door Bas van der Ploeg';
-    public $author = 'Bas van der Ploeg - www.basvanderploeg.nl';
+    public $description = 'Dashboard';
+    public $author = 'Martijn Russchen';
     
     // Google Analytics trackincode (bv. UA-2044578-1)
     public $analytics = 'UA-code';
