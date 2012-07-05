@@ -7,13 +7,13 @@
  * @see http://www.basvanderploeg.nl 
  */
 
-$config['nl.basvanderploeg']['dribble'] = array(
+$config['nl.basvanderploeg']['dribbble'] = array(
     'enabled' => true,
     'label' => 'Dribbble Volgers',
     'data' => array(
         array(
             'enabled' => true,
-            'label' => 'Dribble - Bas van der Ploeg',
+            'label' => 'Dribbble - Bas van der Ploeg',
             'username' => 'basvanderploeg'
         )
     )
