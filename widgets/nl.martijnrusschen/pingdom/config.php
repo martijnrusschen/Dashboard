@@ -7,7 +7,7 @@
  */
 
 $config['nl.martijnrusschen']['pingdom'] = array(
-    'enabled' => true,
+    'enabled' => false,
     'label' => 'Pingdom'
 );
 ?>
