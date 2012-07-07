@@ -11,7 +11,7 @@ $config['nl.factlink']['vimeo'] = array(
     'enabled' => true,
     'data' => array(
         array(
-            'enabled' => true,
+            'enabled' => false,
             'label' => 'Vimeo',
             'username' => 'factlink'
         ),

@@ -2,21 +2,52 @@
 <?php if (isset($config['nl.factlink']['vimeo']) && $config['nl.factlink']['vimeo']['enabled']) { ?>
     <!-- HTML / PHP -->
     <?php
-    if (isset($config['nl.factlink']['vimeo']['data']) && is_array($config['nl.factlink']['vimeo']['data'])) {
-        foreach ($config['nl.factlink']['vimeo']['data'] as $data) {
-            $string = file_get_contents('http://vimeo.com/api/v2/video/39821677.json');
-            $json_a = json_decode($string, true);
-            ?>
-            <li>
-                <div class="box" id="knop-dribbble">
-                    <div class="vimeo-views"><? echo $json_a['stats_number_of_plays']; ?></div>
-                </div>
-                <label><?php echo $data['label'] ?></label>
-            </li>
-            <?php
-        }
-    }
+        $jsonvm_fl = "http://vimeo.com/api/v2/video/39821677.json";
+
+        // initialise the session
+        $ch = curl_init();
+
+        // Set the URL
+        curl_setopt($ch, CURLOPT_URL, $jsonvm_fl);
+
+        // Return the output from the cURL session rather than displaying in the browser.
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        //Execute the session, returning the results to $curlout, and close.
+        $curlout = curl_exec($ch);
+        curl_close($ch);
+
+        $respvm_fl = json_decode($curlout, true);
+
+        // initialise the session
+        $ch = curl_init();
+
+        // Set the URL
+        curl_setopt($ch, CURLOPT_URL, $jsonvm_is);
+
+        // Return the output from the cURL session rather than displaying in the browser.
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        //Execute the session, returning the results to $curlout, and close.
+        $curlout = curl_exec($ch);
+        curl_close($ch);
+
+        $respvm_is = json_decode($curlout, true);
+
+        // echo "<pre>";
+        // print_r($respvm_is);
+        // echo "</pre>";
+
+        $fl_vm = $respvm_fl[0]['stats_number_of_plays'];  
     ?>
+
+       <li>
+            <div class="box" id="vimeo">
+                <div class="vimeo-views"><? echo $fl_vm ?></div>
+            </div>
+            <label><?php echo $data['label'] ?></label>
+        </li>
+
     <!-- END -->
 
     <!-- CSS -->
