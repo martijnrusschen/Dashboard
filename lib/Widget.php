@@ -9,13 +9,12 @@
  */
 class Widget {
     
-    private $name, $developer, $config, $images;
+    private $name, $developer, $images;
     
     public function __construct($name, $developer) {
         $this->name = $name;
         $this->developer = $developer;
         $this->images = array();
-        $this->config = new Configuration();
         
         // Initiate images
         $s = new Search($this->getResourcePath());
@@ -31,13 +30,13 @@ class Widget {
     public function getFullName() { return $this->getDeveloper() . '.' . $this->getName(); }
     public function getID() { return str_replace('.', '-', $this->getFullName()); }
     
-    public function getWidgetPath() { return $this->config->widgets_dir . DS . $this->developer . DS . $this->name; }
-    public function getResourcePath() { return $this->config->resource_dir . DS . $this->developer . DS . $this->name; }
-    public function getActionPath() { return $this->config->widgets_dir . DS . $this->developer . DS . $this->name . DS . $this->config->action_dir; }
+    public function getWidgetPath() { return Config::$widgets_dir . DS . $this->developer . DS . $this->name; }
+    public function getResourcePath() { return Config::$resource_dir . DS . $this->developer . DS . $this->name; }
+    public function getActionPath() { return Config::$widgets_dir . DS . $this->developer . DS . $this->name . DS . Config::$action_dir; }
     
-    public function getWidgetFile() { return $this->getWidgetPath() . DS . $this->config->widget_file; }
-    public function getWidgetConfig() { return $this->getWidgetPath() . DS . $this->config->widget_config; }
-    public function getActionFile($action) { return $this->getActionPath() . DS . $action . $this->config->action_ext; }
+    public function getWidgetFile() { return $this->getWidgetPath() . DS . Config::$widget_file; }
+    public function getWidgetConfig() { return $this->getWidgetPath() . DS . Config::$widget_config; }
+    public function getActionFile($action) { return $this->getActionPath() . DS . $action . Config::$action_ext; }
     
     public function getPlaceholder() {
         return '<li id="' . $this->getID() . '"><div class="box"></div><label>Laden...</label></li>';

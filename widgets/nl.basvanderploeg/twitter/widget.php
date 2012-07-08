@@ -5,13 +5,14 @@
     if (isset($config['nl.basvanderploeg']['twitter']['data']) && is_array($config['nl.basvanderploeg']['twitter']['data'])) {
         foreach ($config['nl.basvanderploeg']['twitter']['data'] as $data) {
             if ($data['enabled']) {
-                $xml = simplexml_load_file('http://twitter.com/users/show/' . $data['username']);
+                $api_data = Helper::makeCachedAPIRequest('http://twitter.com/users/show/' . $data['username'] . '.json');
+                $api_data = json_decode($api_data, true);
                 ?>
                 <li>
                     <div class="box" id="knop-twitter">
-                        <div class="twitter-followers"> <?php echo $xml->followers_count; ?> </div>
-                        <div class="twitter-following"> <?php echo $xml->friends_count; ?> </div>
-                        <div class="twitter-tweets"> <?php echo $xml->statuses_count; ?> </div>
+                        <div class="twitter-followers"> <?php echo $api_data['followers_count']; ?> </div>
+                        <div class="twitter-following"> <?php echo $api_data['friends_count']; ?> </div>
+                        <div class="twitter-tweets"> <?php echo $api_data['statuses_count']; ?> </div>
                     </div>
                     <label><?php echo $data['label']; ?></label>
                 </li>

@@ -3,26 +3,21 @@ define('BAS', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
 require 'Configuration.php';
-require 'lib' . DS . 'Dashboard.php';
-require 'lib' . DS . 'Widget.php';
-require 'lib' . DS . 'Search.php';
+require 'lib' . DS . 'include.inc.php';
 
-$configuration = new Configuration();
 $dash = new Dashboard();
 
 $dash->auth();
-
 $dash->catchRequest();
-
 $dash->init();
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $configuration->title; ?></title>
-        <meta name='description' content='<?php echo $configuration->description; ?>' />
-        <meta name="author" content="<?php echo $configuration->author; ?>" />
+        <title><?php echo Config::$title; ?></title>
+        <meta name='description' content='<?php echo Config::$description; ?>' />
+        <meta name="author" content="<?php echo Config::$author; ?>" />
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta http-equiv='cleartype' content='on'/>
@@ -64,13 +59,13 @@ $dash->init();
 
         <div id="top-info">
             <div class="top-text">
-                <a href="javascript:location.reload(true)">Dashboard</a>
+                <a href="javascript:location.reload(true)"><?php echo Config::$top_text; ?></a>
             </div>  
         </div>
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '<?php echo $configuration->analytics; ?>']);
+            _gaq.push(['_setAccount', '<?php echo Config::$analytics; ?>']);
             _gaq.push(['_trackPageview']);
             
             (function() {

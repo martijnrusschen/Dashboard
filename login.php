@@ -3,12 +3,13 @@ define('BAS', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
 require 'Configuration.php';
-require 'lib' . DS . 'Dashboard.php';
+require 'lib' . DS . 'include.inc.php';
 
-$configuration = new Configuration();
+Cache::set('test.dit.maar=];)', array('apizza'));
+
 $dash = new Dashboard();
 
-if (!$configuration->auth) { header('Location: index.php'); }
+if (!Config::$auth) { header('Location: index.php'); }
 
 if (isset($_POST['username'], $_POST['password'])) {
     $dash->login($_POST['username'], $_POST['password']);
@@ -18,9 +19,9 @@ if (isset($_POST['username'], $_POST['password'])) {
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $configuration->title; ?></title>
-        <meta name='description' content='<?php echo $configuration->description; ?>' />
-        <meta name="author" content="<?php echo $configuration->author; ?>" />
+        <title><?php echo Config::$title; ?></title>
+        <meta name='description' content='<?php echo Config::$description; ?>' />
+        <meta name="author" content="<?php echo Config::$author; ?>" />
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta http-equiv='cleartype' content='on'/>
@@ -52,7 +53,7 @@ if (isset($_POST['username'], $_POST['password'])) {
     <body>
         <div class="wrap">
             <div id="login-container" >
-                <form id="login-form" action="<?php echo $configuration->auth_login; ?>" method="post">
+                <form id="login-form" action="<?php echo Config::$auth_login; ?>" method="post">
                     <?php if(isset($_SESSION['login_error'])) { echo '<h3>' . $_SESSION['login_error'] . '</h3>'; } ?>
                     <input type="text" name="username" id="username" placeholder="Gebruikersnaam" /><br/>
                     <input type="password" name="password" id="password" placeholder="Wachtwoord" /><br/>
@@ -69,7 +70,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '<?php echo $configuration->analytics; ?>']);
+            _gaq.push(['_setAccount', '<?php echo Config::$analytics; ?>']);
             _gaq.push(['_trackPageview']);
             
             (function() {

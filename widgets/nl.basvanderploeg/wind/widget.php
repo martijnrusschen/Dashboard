@@ -5,8 +5,8 @@
     if (isset($config['nl.basvanderploeg']['wind']['data']) && is_array($config['nl.basvanderploeg']['wind']['data'])) {
         foreach ($config['nl.basvanderploeg']['wind']['data'] as $data) {
             if ($data['enabled']) {
-                $url = 'http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode'];
-                $xml = simplexml_load_file($url);
+                $api_data = Helper::makeCachedAPIRequest('http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode']);
+                $xml = simplexml_load_string($api_data);
 
                 $wind = $xml->xpath('//yweather:wind');
                 $attributes = $wind[0]->attributes();

@@ -9,7 +9,7 @@
  */
 class Dashboard {
     
-    private $config, $widgets;
+    private $widgets;
     
     /**
      * Constructor 
@@ -17,7 +17,6 @@ class Dashboard {
     public function __construct() {
         session_start();
         
-        $this->config = new Configuration();
         $this->widgets = array();
     }
     
@@ -25,12 +24,12 @@ class Dashboard {
      * Init het Dashboard laad alle widgets 
      */
     public function init() {
-        $s = new Search($this->config->widgets_dir);
+        $s = new Search(Config::$widgets_dir);
         $this->widgets = array_merge($this->widgets, $s->findWidgets());
-        
-        if ($this->config->do_sort) {
+
+        if (Config::$do_sort) {
             ksort($this->widgets);
-            $this->widgets = $this->_sortArrayByArray($this->widgets, $this->config->sort); 
+            $this->widgets = $this->_sortArrayByArray($this->widgets, Config::$sort); 
         }
     }
     
@@ -38,9 +37,9 @@ class Dashboard {
      * Authenticatie challenge
      */
     public function auth() {
-        if ($this->config->auth) {
+        if (Config::$auth) {
             if ($_SESSION['loggedin'] == 0) {
-                header('Location: ' . $this->config->auth_login);
+                header('Location: ' . Config::$auth_login);
                 die();
             }
         }
@@ -52,18 +51,18 @@ class Dashboard {
      * @param string $password 
      */
     public function login($username, $password) {
-        if (isset($this->config->auth_users[$username])) {
-            if ($this->config->auth_users[$username] == $password) {
+        if (isset(Config::$auth_users[$username])) {
+            if (Config::$auth_users[$username] == $password) {
                 unset($_SESSION['login_error']);
                 $_SESSION['loggedin'] = 1;
                 
-                header('Location: ' . $this->config->homepage);
+                header('Location: ' . Config::$homepage);
                 die();
             } else {
-                $_SESSION['login_error'] = $this->config->auth_wrong_password;
+                $_SESSION['login_error'] = Config::$auth_wrong_password;
             }
         } else {
-            $_SESSION['login_error'] = $this->config->auth_wrong_username;
+            $_SESSION['login_error'] = Config::$auth_wrong_username;
         }
         $_SESSION['loggedin'] = 0;
     }
@@ -83,7 +82,7 @@ class Dashboard {
      * Catch een request voor een specifieke widget 
      */
     public function catchRequest() {
-        if ($this->config->catch) {
+        if (Config::$catch) {
             $catched = false;
             
             if (isset($_GET['id'])) {
@@ -124,14 +123,14 @@ class Dashboard {
     private function _preloadImages() {
         $output = array();
 
-        if ($this->config->preload) {
+        if (Config::$preload) {
             $this->init();
             
             foreach ($this->widgets as $widget) {
                 $output = array_merge($output, $widget->getImagePaths());
             }
             
-            $s = new Search($this->config->resource_dir . DS . $this->config->core_img_search);
+            $s = new Search(Config::$resource_dir . DS . Config::$core_img_search);
             $output = array_merge($output, $s->findImages());
         }
         
@@ -139,31 +138,31 @@ class Dashboard {
     }
     
     private function _loadWidgets() {
-        if ($this->config->ajax_load) {
-            if ($this->config->ajax_placeholder) {
+        if (Config::$ajax_load) {
+            if (Config::$ajax_placeholder) {
                 foreach ($this->widgets as $name => $widget) {
                     echo $widget->getPlaceholder();
                 }
                 
                 echo '<script>'; 
-                echo ($this->config->wait_for_dom) ? '$(document).ready(function() { ' : '';
+                echo (Config::$wait_for_dom) ? '$(document).ready(function() { ' : '';
                 
                 foreach ($this->widgets as $name => $widget) {
                     echo 'spinme(\'' . $widget->getID() . '\');';
                     echo 'loadMe(\'' . $widget->getFullName() . '\');';
                 }
                 
-                echo ($this->config->wait_for_dom) ? ' });' : '';
+                echo (Config::$wait_for_dom) ? ' });' : '';
                 echo '</script>';
             } else {
                 echo '<script>'; 
-                echo ($this->config->wait_for_dom) ? '$(document).ready(function() { ' : '';
+                echo (Config::$wait_for_dom) ? '$(document).ready(function() { ' : '';
             
                 foreach ($this->widgets as $name => $widget) {
                     echo '$.get(\'index.php?id=' . $name . '&f\', function(data) { $(\'#widgets\').append(data); });';
                 }
                 
-                echo ($this->config->wait_for_dom) ? ' });' : '';
+                echo (Config::$wait_for_dom) ? ' });' : '';
                 echo '</script>';
             }
         } else {

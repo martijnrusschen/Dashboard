@@ -5,8 +5,7 @@
         <div class="box" id="knop-bbq">
             <div class="bbq-text-nieuw">
                 <?php
-                $xml = simplexml_load_file('http://api.ishetvandaagbarbecueweer.nl/index.xml');
-                echo $xml->ishetvandaagbarbecueweer . '!';
+                echo Helper::makeCachedAPIRequest('http://api.ishetvandaagbarbecueweer.nl', TIME_HALF_HOUR) . '!';
                 ?>
             </div>  
         </div>

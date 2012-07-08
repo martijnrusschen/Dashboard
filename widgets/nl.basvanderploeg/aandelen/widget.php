@@ -9,10 +9,8 @@
                 ?>
                 <li>
                     <div class="box" id="knop-stocks">
-                        <div class="stocks-text"><?php $hit_count = @file_get_contents('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=l1');
-                echo $hit_count; ?></div>    
-                        <div class="stocks-sub"><?php $hit_count = @file_get_contents('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=c1');
-                echo $hit_count; ?></div> 
+                        <div class="stocks-text"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=l1'); ?></div>    
+                        <div class="stocks-sub"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=c1'); ?></div> 
                     </div>
                     <label><?php echo $data['label']; ?></label>
                 </li>
