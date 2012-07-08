@@ -2,52 +2,55 @@
 <?php if (isset($config['nl.factlink']['vimeo']) && $config['nl.factlink']['vimeo']['enabled']) { ?>
     <!-- HTML / PHP -->
     <?php
-        $jsonvm_fl = "http://vimeo.com/api/v2/video/39821677.json";
-
-        // initialise the session
-        $ch = curl_init();
-
-        // Set the URL
-        curl_setopt($ch, CURLOPT_URL, $jsonvm_fl);
-
-        // Return the output from the cURL session rather than displaying in the browser.
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        //Execute the session, returning the results to $curlout, and close.
-        $curlout = curl_exec($ch);
-        curl_close($ch);
-
-        $respvm_fl = json_decode($curlout, true);
-
-        // initialise the session
-        $ch = curl_init();
-
-        // Set the URL
-        curl_setopt($ch, CURLOPT_URL, $jsonvm_is);
-
-        // Return the output from the cURL session rather than displaying in the browser.
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        //Execute the session, returning the results to $curlout, and close.
-        $curlout = curl_exec($ch);
-        curl_close($ch);
-
-        $respvm_is = json_decode($curlout, true);
-
-        // echo "<pre>";
-        // print_r($respvm_is);
-        // echo "</pre>";
-
-        $fl_vm = $respvm_fl[0]['stats_number_of_plays'];  
+    if (isset($config['nl.factlink']['vimeo']['data']) && is_array($config['nl.factlink']['vimeo']['data'])) {
+        foreach ($config['nl.factlink']['vimeo']['data'] as $data) {
+            if ($data['enabled']) {
+                // Totaal views voor een video
+                if ($data['mode'] == 'video') :
+                    $url = str_replace('{id}', $data['id'], $config['nl.factlink']['vimeo']['video-url']);
+                    $output = @file_get_contents($url);
+                    $output = json_decode($output, true);
+                    
+                    $title = $output[0]['title'];
+                    $num_views = $output[0]['stats_number_of_plays'];
+                    ?>
+                        <li id="nl-factlink-vimeo">
+                            <div class="box" id="vimeo">
+                                <div class="vimeo-title"><?php echo $title; ?></div>
+                                <div class="vimeo-views"><?php echo $num_views; ?></div>
+                            </div>
+                            <label><?php echo $data['label'] ?></label>
+                        </li>
+                    <?php
+                endif;
+                
+                // Total views voor een user
+                if ($data['mode'] == 'total') :
+                    $url = str_replace('{id}', $data['id'], $config['nl.factlink']['vimeo']['total-url']);
+                    $output = @file_get_contents($url);
+                    $output = json_decode($output, true);
+                    
+                    $username = $output[0]['user_name'];
+                    $num_videos = count($output);
+                    $num_views = 0;
+                    foreach($output as $video) {
+                        $num_views += $video['stats_number_of_plays'];
+                    }
+                    ?>
+                        <li id="nl-factlink-vimeo">
+                            <div class="box" id="vimeo">
+                                <div class="vimeo-user"><?php echo $username; ?></div>
+                                <div class="vimeo-num-videos"><?php echo $num_videos; ?></div>
+                                <div class="vimeo-views"><?php echo $num_views; ?></div>
+                            </div>
+                            <label><?php echo $data['label'] ?></label>
+                        </li>
+                    <?php
+                endif;
+            }
+        }
+    }
     ?>
-
-       <li>
-            <div class="box" id="vimeo">
-                <div class="vimeo-views"><? echo $fl_vm ?></div>
-            </div>
-            <label><?php echo $data['label'] ?></label>
-        </li>
-
     <!-- END -->
 
     <!-- CSS -->
