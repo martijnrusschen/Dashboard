@@ -6,6 +6,7 @@ class Helper {
      * Return the data from a URL.
      * 
      * @param String $url The URL to call.
+     * @param Array $options CURL options
      * @return Mixed Returns the requested data or null if none.
      */
     public static function getDataFromURL($url, $options = null) {
@@ -51,10 +52,11 @@ class Helper {
     }
     
     /**
-     * Make a cached automatic cached request.
+     * Make a automatic cached request.
      * 
      * @param String $url The URL to call.
      * @param Integer $ttl The time to live in seconds.
+     * @param Array $options CURL options
      * @return mixed The retrieved data. 
      */
     public static function makeCachedAPIRequest($url, $ttl = 300, $options = null) {
