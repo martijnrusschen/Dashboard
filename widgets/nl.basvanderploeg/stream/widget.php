@@ -8,8 +8,8 @@
                 ?>
                 <li>
                     <div class="box" id="knop-tv">
-                        <div id="inhoud-video-top"></div>
-                        <div id="videoscreen"> 
+                        <div class="inhoud-video-top"></div>
+                        <div class="videoscreen"> 
                             <video width="196" height="100" controls="none" poster="<?php echo $data['poster'] ?>">
                                 <?php foreach ($data['streams'] as $stream) { ?>
                                     <source src="<?php echo $stream['url'] ?>" type="<?php echo $stream['type'] ?>" />
@@ -28,6 +28,32 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-tv{
+            background-image: url('widgets/nl.basvanderploeg/stream/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        } 
+        .videoscreen {
+            width: 196px;
+            height: 100px;
+            color: #5E6873;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0px 1px 0px white;
+            overflow: hidden;
+            display: block;
+            padding-left: 11px;
+        }
+        .inhoud-video-top{
+            width: 160px;
+            height: 11px;
+            overflow: hidden;
+            padding-top: 0px;
+            border: solid 0px black;
+        }
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

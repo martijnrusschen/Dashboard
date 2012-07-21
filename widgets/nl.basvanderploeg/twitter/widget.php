@@ -24,6 +24,46 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-twitter {
+            background-image: url('widgets/nl.basvanderploeg/twitter/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        }
+        .twitter-followers {
+            top:26px; 
+            left:15px;
+            right:115px;
+            color:  rgb(62,155,185);
+            font-size: 30px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white;
+            position:absolute; 
+        } 
+        .twitter-following {
+            top:26px; 
+            left:115px;
+            right:15px;
+            color:  rgb(62,155,185);
+            font-size: 30px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white;
+            position:absolute;
+        } 
+        .twitter-tweets {
+            top:77px; 
+            left:0px;
+            right:0px;
+            position:absolute;
+            color:  rgb(62,155,185);
+            font-size: 16px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white; 
+        } 
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

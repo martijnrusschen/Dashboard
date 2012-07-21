@@ -101,6 +101,80 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-temp{
+            background-image: url('widgets/nl.basvanderploeg/temperatuur/img/bg@2x.png');
+            background-repeat:no-repeat;
+            background-size:218px 122px;
+        } 
+        .temp-text {
+            top:10px; 
+            left:10px;
+            right:0px;
+            position:absolute;
+            color:  rgb(216,227,248);
+            font-size: 65px;
+            font-weight:normal;
+            text-align:center;
+            text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue; 
+        } 
+        .temp-sub {
+            top:83px; 
+            left:0px;
+            right:0px;     
+            position:absolute;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 2px darkblue; 
+        } 
+        .temp-image {
+            padding-top: 10px;
+            color:  rgb(216,227,248);
+            font-size: 65px;
+            font-weight:normal;
+            text-align:center;
+            text-shadow: 0px -1px 0px white, 0px 2px 2px darkblue; 
+        } 
+        .temp-image-sub {
+            margin-top: -6px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 2px darkblue; 
+        } 
+        .temp-side-image {
+            width:50px;
+            height:34px;
+            margin-top: -68px;
+            padding-left: 12px;
+            float: left;
+        } 
+        .temp-sub-hoog {
+            top:43px; 
+            left:29px;
+            right:184px;     
+            position:absolute;
+            color: rgb(45,97,205);
+            font-size: 20px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white; 
+        }  
+        .temp-sub-laag {
+    top:43px; 
+    left:184px;
+    right:29px;     
+    position:absolute;
+    color: rgb(45,97,205);
+    font-size: 20px;
+    font-weight: bold;
+    text-align:center;
+    text-shadow: 0px 1px 0px white; 
+} 
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

@@ -30,6 +30,35 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-klok {
+            background-image: url('widgets/nl.basvanderploeg/klok_digitaal/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        } 
+        .klok-text {
+            top:10px; 
+            left:0px;
+            right:0px;
+            position:absolute;
+            color:  white;
+            font-size: 65px;
+            font-weight:normal;
+            text-align:center;
+            text-shadow: 0px 2px 2px black; 
+        } 
+        .klok-sub {
+            top:85px; 
+            left:0px;
+            right:0px;     
+            position:absolute;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 2px black; 
+        } 
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->
@@ -43,10 +72,7 @@
             document.getElementById('clockbox').innerHTML = "" + nhour + ":" + nmin + "";
             setTimeout("getClock()", 1000);
         }
-        
-        $(document).ready(function() {
-            getClock();
-        });
+        $(document).ready(getClock());
     </script>
     <!-- END -->
 <?php } ?>

@@ -1,0 +1,176 @@
+/* ===== Primary Styles ========================================================
+   Author: Bas van der Ploeg
+   Link: http://www.basvanderploeg.nl
+   Twitter: basvanderploeg
+   ============================================================================= */
+/* BODY */
+body{ 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;	
+    color: #ffffff;
+    background: rgb(59,66,74); 
+    padding: 0px;   
+    margin: 0px;  
+}
+
+/* LINKS */
+a {
+    color: #ffffff; 
+    text-decoration:none; 
+}
+a:focus {
+    color: #ffffff;
+    outline: 0;
+}
+a:hover {
+    color: #ffffff;
+}
+a:active {
+    color: #ffffff;
+}
+
+/* HEADER */
+header {
+}
+
+/* TOP INFO */
+#top-info{
+    width:100%;
+    height:51px;
+    text-align: center;
+    background-color:none; 
+    background-position:center;
+    margin-top: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-image: url('../img/top.png');
+    background-size: 315px 51px;
+    background-repeat:no-repeat;
+} 
+.top-text {
+    padding-top: 10px;
+    color:  white;
+    font-size: 21px;
+    font-weight:bold;
+    text-align:center;
+    text-shadow: 0px -1px 0px black; 
+} 
+.top-sub {
+    margin-top: -5px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align:center;
+    text-shadow: 0px 1px 2px black; 
+}           
+
+/* WIDGET LIST */
+div[role=main] {
+    margin-top: 60px;
+}
+ul#widgets, ul#widgets li, ul#widgets li a, a.details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul#widgets{
+    display: block;
+    position: relative;
+    text-align: center;
+}
+ul#widgets li {
+    display: inline-block;
+    position: relative;
+    width: 218px;
+    padding-top: 0px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 30px;
+    color: rgb(155,157,162); 
+    text-shadow: 0px 2px 4px #1b1f2b;
+    filter: dropshadow(color=#1b1f2b, offx=0, offy=2);
+}
+ul#widgets li label {
+    display: block;
+    text-align: center;
+    max-width: 218px;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #000;
+    line-height: 16px;
+    color: rgb(155,157,162); 
+    text-shadow: 0px 2px 4px #1b1f2b;
+    filter: dropshadow(color=#1b1f2b, offx=0, offy=2);
+    padding-top: 10px;
+}
+ul#widgets li label a {        
+    color:rgb(155,157,162); 
+    text-decoration:none; 
+}
+ul#widgets li label a:focus {
+    color:rgb(155,157,162);
+    outline: 0;
+}
+ul#widgets li label a:hover {
+    color:rgb(155,157,162);
+}
+ul#widgets li label a:active {
+    color:rgb(155,157,162);
+}
+
+/* WIDGET BORDER & SHADOW */
+.box {
+    background: center none;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3); 
+    height: 122px;
+    width: 218px;
+    -moz-border-radius: 11px;
+    border-radius: 11px; 
+    margin: 0px;
+}
+.box-full {
+    background: center white;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 6px 5px 1px rgb(31,35,39), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.3); 
+    height: 544px;
+    width: 704px;
+    -moz-border-radius: 11px;
+    border-radius: 11px; 
+    margin: 0px;
+} 
+
+/* JQUERY SPINNER */
+.spinner {
+    top: 61px !important;
+}
+
+/* =============================================================================
+   Media Queries
+   ============================================================================= */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #top-info { 
+        background-image: url("../img/top@2x.png"); 
+    }
+}
+
+/* =============================================================================
+   Non-Semantic Helper Classes
+   ============================================================================= */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

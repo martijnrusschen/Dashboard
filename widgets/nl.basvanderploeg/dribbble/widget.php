@@ -22,6 +22,46 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-dribbble {
+            background-image: url('widgets/nl.basvanderploeg/dribbble/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        }
+        .dribbble-followers {	
+            top:48px; 
+            left:0px;
+            right:0px;
+            position:absolute;
+            color: grey;
+            font-size: 20px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white;
+        } 
+        .dribbble-following {
+            top:52px; 
+            left:25px;
+            right:163px;     
+            position:absolute;
+            color: grey;
+            font-size: 14px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white; 
+        }  
+        .dribbble-shots {
+            top:52px; 
+            left:162px;
+            right:25px;     
+            position:absolute;
+            color: grey;
+            font-size: 14px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white; 
+        }
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

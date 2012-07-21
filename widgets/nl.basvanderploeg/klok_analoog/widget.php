@@ -16,6 +16,39 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-analoog{
+            background-image: url('widgets/nl.basvanderploeg/klok_analoog/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        }
+        #clock {
+            position: absolute;
+        }
+        #sec, #min, #hour {
+            position: absolute;
+            height: 80px;
+            width: 12px;
+            top: 22px;
+            left: 103px;
+            background-size:12px 80px;
+        }
+        #sec {
+            background: url('widgets/nl.basvanderploeg/klok_analoog/img/sechand.png');
+            background-size:12px 80px;
+            z-index:3;
+        }
+        #min {
+            background: url('widgets/nl.basvanderploeg/klok_analoog/img/minhand.png');
+            background-size:12px 80px;
+            z-index:2;
+        }
+        #hour {
+            background: url('widgets/nl.basvanderploeg/klok_analoog/img/hourhand.png');
+            background-size:12px 80px;
+            z-index:1;
+        }
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

@@ -17,7 +17,7 @@
                 <li>
                     <div class="box" id="knop-wind">
                         <div class="wind-text"><?php echo $windkracht; ?></div>
-                        <div class="wind-sub"></div>
+                        <div class="wind-sub" style="-webkit-transform: rotate(<?php echo $windrichting; ?>deg); -moz-transform: rotate(<?php echo $windrichting; ?>deg); -o-transform: rotate(<?php echo $windrichting; ?>deg);"></div>
                         <div class="wind-gevoel"><?php echo $gevoelstemp; ?>&deg;</div>
                     </div>
                     <label><?php echo $data['label'] ?></label>
@@ -31,11 +31,49 @@
 
     <!-- CSS -->
     <style type="text/css">
-        .wind-sub{
-            -webkit-transform: rotate(<?php echo $windrichting; ?>deg);
-            -moz-transform: rotate(<?php echo $windrichting; ?>deg);
-            -o-transform: rotate(<?php echo $windrichting; ?>deg);
-        }     
+        #knop-wind{
+            background-image: url('widgets/nl.basvanderploeg/wind/img/bg@2x.png');
+            background-repeat:no-repeat;
+            background-size:218px 122px;
+        } 
+        .wind-text {
+            top:49px; 
+            left:0px;
+            right:0px;
+            position:absolute;
+            color:  black;
+            font-size: 19px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: none; 
+        } 
+        .wind-sub {
+            background-image:url('widgets/nl.basvanderploeg/wind/img/arrow.png');
+            background-size:6px 30px;
+            background-color: none;
+            width: 6px;
+            height: 30px;
+            top:47px; 
+            left:47px;
+            right:0px;     
+            position:absolute;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow:none;
+        } 
+        .wind-gevoel {
+            top:53px; 
+            left:165px;
+            right:16px;
+            position:absolute;
+            color:  black;
+            font-size: 14px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: none; 
+        } 
     </style>
     <!-- END -->
 

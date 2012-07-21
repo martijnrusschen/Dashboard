@@ -19,10 +19,6 @@ class Config {
     // Tekst aan de bovenkant van de pagina
     public static $top_text = 'Dashboard';
     
-    // Meta - Description & Author
-    public static $description = 'Dashboard door Bas van der Ploeg';
-    public static $author = 'Bas van der Ploeg - www.basvanderploeg.nl';
-    
     // Google Analytics trackincode (bv. UA-2044578-1)
     public static $analytics = 'UA-2044578-1';
     
@@ -30,7 +26,7 @@ class Config {
      * Security 
      */
     // Schakel de beveiliging in
-    public static $auth = false;
+    public static $auth = true;
     
     // Array met gebruiker
     // vb. 'username' => 'password'
@@ -77,6 +73,9 @@ class Config {
     // Doorzoek de res map en preload alle images
     public static $preload = true;
     
+    // Schoon de cache elke keer als de pagina word geladen
+    public static $clean_cache_onload = false;
+    
     /**
      * !!! Advanced !!!
      * Verander hier alleen iets als je weet wat je doet!
@@ -85,9 +84,10 @@ class Config {
     public static $auth_login = 'login.php';
     public static $widget_file = 'widget.php';
     public static $widget_config = 'config.php';
+    public static $ext_regex = '/.*(\%s)$/';
+    public static $img_regex = '/.*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])$/';
     
     public static $widgets_dir = 'widgets';
-    public static $resource_dir = 'res';
     public static $action_dir = 'actions';
     public static $cache_dir = 'cache';
     
@@ -98,7 +98,6 @@ class Config {
     
     public static $core_img_search =  'nl.basvanderploeg/core/img';
     public static $ignore_dirs = array('.htaccess', 'index.php', '.svn', '.', '..');
-    public static $img_regex = '/.*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])$/';
     public static $catch = true;
     
 }

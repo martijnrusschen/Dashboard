@@ -48,21 +48,31 @@
 
     <!-- CSS -->
     <style type="text/css">
-        #knop-dagnacht{
-            background-image: url("res/nl.basvanderploeg/core/img/nu-<?php echo $dayornight; ?>.png");
-            background-repeat:no-repeat;
+        .dag-text {
+            top:90px; 
+            left:28px;
+            right:139px;
+            position:absolute;
+            color:  white;
+            font-size: 16px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 0px 1px black; 
         } 
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-        only screen and (-o-min-device-pixel-ratio: 3/2),
-        only screen and (min--moz-device-pixel-ratio: 1.5),
-        only screen and (min-device-pixel-ratio: 1.5) {
-            #knop-dagnacht {
-                background-image:url("res/nl.basvanderploeg/core/img/nu-<?php echo $dayornight; ?>.png");
-            }
-        }
-
+        .nacht-text {
+            top:90px; 
+            left:139px;
+            right:28px;
+            position:absolute;
+            color:  white;
+            font-size: 16px;
+            font-weight:bold;
+            text-align:center;
+            text-shadow: 0px 0px 1px black; 
+        } 
         #knop-dagnacht{
+            background-image: url("widgets/nl.basvanderploeg/zon/img/bg-<?php echo $dayornight; ?>.png");
+            background-repeat:no-repeat;
             background-size:218px 122px;
         } 
     </style>

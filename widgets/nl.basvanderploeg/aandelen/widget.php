@@ -22,6 +22,33 @@
     <!-- END -->
 
     <!-- CSS -->
+    <style>
+        #knop-stocks {
+            background-image: url('widgets/nl.basvanderploeg/aandelen/img/bg@2x.png');
+            background-repeat: no-repeat;
+            background-size: 218px 122px;
+        } 
+        .stocks-text {
+            padding-top: 11px;
+            padding-left: 10px;
+            padding-right: 95px;
+            color: rgb(45,97,205);
+            font-size: 25px;
+            font-weight: bold;
+            text-align:center;
+            text-shadow: 0px 1px 0px white; 
+        } 
+        .stocks-sub {
+            margin-top: -35px;
+            margin-left: 130px;
+            margin-right: 10px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:right;
+            text-shadow: 0px 1px 2px darkblue; 
+        }
+    </style>
     <!-- END -->
 
     <!-- JavaScript -->

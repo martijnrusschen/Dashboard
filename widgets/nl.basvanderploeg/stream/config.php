@@ -24,7 +24,7 @@ $config['nl.basvanderploeg']['stream'] = array(
                     'type' => 'video/mp4'
                 )
             ),
-            'poster' => 'res/nl.basvanderploeg/core/img/nos-journaal24.png'
+            'poster' => 'widgets/nl.basvanderploeg/stream/img/poster/nos-journaal24.png'
         ),
         array(
             'enabled' => true,
@@ -35,7 +35,18 @@ $config['nl.basvanderploeg']['stream'] = array(
                     'type' => 'video/mp4'
                 )
             ),
-            'poster' => 'res/nl.basvanderploeg/core/img/nos-politiek24.png'
+            'poster' => 'widgets/nl.basvanderploeg/stream/img/poster/nos-politiek24.png'
+        ),
+        array(
+            'enabled' => true,
+            'label' => 'Tour de France',
+            'streams' => array(
+                array(
+                    'url' => 'http://108da006e4b9de05dddf161208036ddf.5cbe04d3fb20758953ddc04e685fe4ae.smoote2k.npostreaming.nl/d/live/nos/events/sportzomer2012_01/sportzomer2012_01.isml/sportzomer2012_01.m3u8',
+                    'type' => 'video/mp4'
+                )
+            ),
+            'poster' => 'http://s.nos.nl/img/placeholders/studiosport.jpg'
         )
     )
 );

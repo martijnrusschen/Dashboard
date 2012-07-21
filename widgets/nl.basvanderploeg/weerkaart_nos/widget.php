@@ -2,7 +2,7 @@
 <?php if (isset($config['nl.basvanderploeg']['weerkaart_nos']) && $config['nl.basvanderploeg']['weerkaart_nos']['enabled']) { ?>
     <!-- HTML / PHP -->
     <li>
-        <div class="box" id="nl-basvanderploeg-weerkaart_nos" >
+        <div class="box" id="knop-weerkaart-nos" >
             <a class="link-block" href="<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>" target="_blank"></a>
             <a href="<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>" target="_blank" class="sprite-nos"></a>
         </div>
@@ -12,16 +12,16 @@
 
     <!-- CSS -->
     <style type="text/css" >
-        #nl-basvanderploeg-weerkaart_nos {
-            background-image: url('http://nos.weatheronyoursite.com/nos_internet/nos_radar.gif');
-            background-size:218px auto;
+        #knop-weerkaart-nos {
+            background-image: url('<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>');
+            background-size: 218px auto;
             background-position: 46% 54%;
         }
         .sprite-nos{ 
             top:15px; 
             left:14px;    
             position:absolute;
-            background-image: url('<?php echo $config['nl.basvanderploeg']['weerkaart']['imageURL']; ?>');
+            background-image: url('<?php echo $config['nl.basvanderploeg']['weerkaart_nos']['imageURL']; ?>');
             background-size: 270px auto;
             background-position: 0 -15px; 
             width: 71px; 
