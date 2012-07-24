@@ -44,7 +44,7 @@ class Config {
     
     // Achtergrond van login scherm
     // Mogelijke waarde: stripe, clean
-    public static $auth_background = 'stripe'; // Verander in clean voor een achtergrond zonder lijn
+    public static $auth_background = 'clean'; // Verander in clean voor een achtergrond zonder lijn
     
     /**
      * Widget instellingen 
