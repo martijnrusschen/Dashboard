@@ -41,23 +41,38 @@ var AUTOREFRESHERS = new Object();
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+function escape(string) {
+    return string.replace(/(:|\.)/g,'\\$1');
+}
+function redirectNewWindow(href) {
+    var a = document.createElement('a');
+    a.setAttribute('href', href);
+    a.setAttribute('target', '_blank');
+
+    var dispatch = document.createEvent('HTMLEvents');
+    dispatch.initEvent('click', true, true);
+    
+    console.log("[LOG] {INFO} Redirecting to: " + href);
+    a.dispatchEvent(dispatch);
+}
 
 // (Auto) refresh functions
 function autoRefreshMe(id, timeout) {
     if (timeout == null || timeout == undefined) timeout = TIME_FIVE_MINUTE;
     if (id in AUTOREFRESHERS) return; else AUTOREFRESHERS[id] = timeout;
     
-    $.PeriodicalUpdater({
-        url : 'index.php?id=' + id,
-        minTimeout : timeout,
-        maxTimeout : timeout * 10,
-        multiplier : 2
-    }, function(data){
-        $('li#' + id.replace(/\./g, '-')).replaceWith(data);
-        console.log("[LOG] {SUCCESS} \"" + id + "\" just refreshed.");
+    $.PeriodicalUpdater('index.php?id=' + id, {
+        method: 'get',
+        minTimeout: timeout,
+        maxTimeout: timeout * 10,
+        multiplier: 2,
+        type: 'html'
+    }, function(data, success, xhr, handle) {
+        $('li[data-id=' + escape(id) + ']').replaceWith(data);
+        console.log("[LOG] {SUCCESS} \"" + id + "\" just auto refreshed.");
     });
     
-    console.log("[LOG] {SUCCESS} autoRefresh has been enabled for \"" + id + "\" with a timeout of " + timeout + " ms or " + timeout / 1000 + " second(s) or " + timeout / 1000 / 60 + " minute(s).");
+    console.log("[LOG] {SUCCESS} autoRefresh has been enabled for \"" + id + "\" with a timeout of " + timeout / 1000 + " second(s).");
 }
 function refreshMe(id) {
     $.ajax({
@@ -78,7 +93,7 @@ function loadMe(id) {
         url: 'index.php?id=' + id + '&f',
         success: function(data) {
             $('#' + id.replace(/\./g, '-')).replaceWith(data);
-            console.log("[LOG] {SUCCESS} \"" + id + "\" has loaded successfully.");
+            console.log("[LOG] {SUCCESS} \"" + id + "\" loaded successfully.");
             removespin(id);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -101,32 +116,10 @@ function removespin(id) {
     //console.log("[LOG] {LOG} Spinner for: \"" + id + "\" stopped!");
 }
 
-$.getJSON('index.php?preload', function(data) {
-    if (data !== null && data.length > 0) {
-        $.each(data, function(key, val) {
-            $('<img/>')[0].src = val;
-        });
-        console.log("[LOG] {SUCCESS} Preloaded: " + data.length + " images.");
-    } else {
-        console.warn("[LOG] {WARNING} Preloading has been disabled by the user.");
-        console.warn("[LOG] {WARNING} Or no images are available!?");
-    }
-});
-
 $(document).ready(function () {
     $("div[role=main]").on("click", "[data-href]", function () {
-        var url = $(this).data('href');
-                
-        var a = document.createElement('a');
-        a.setAttribute('href', url);
-        a.setAttribute('target', '_blank');
-
-        var dispatch = document.createEvent('HTMLEvents');
-        dispatch.initEvent('click', true, true);
-        a.dispatchEvent(dispatch);
-                
         console.log("[LOG] {INFO} Click has been detected!");
-        console.log("[LOG] {INFO} Redirecting to: " + url);
+        redirectNewWindow($(this).data('href'));
     });
         
     $("div[role=main]").on("DOMNodeInserted", "li[data-refresh=true]", function () {
@@ -136,7 +129,25 @@ $(document).ready(function () {
         var timeout = $(this).data('timeout');
         if (!isNumber(timeout)) { timeout = null; }
         
-        console.log("[LOG] {SUCCESS} Found a auto refreshing widget named: \"" + id + "\" processing...");
+        //console.log("[LOG] {SUCCESS} Found a auto refreshing widget named: \"" + id + "\" processing...");
         autoRefreshMe(id, timeout);
     });
+});
+
+$.getJSON('index.php?preload', function(data) {
+    if (data !== null && data.length > 0) {
+        var cache = [];
+        
+        $.each(data, function(key, val) {
+            var cacheImage = document.createElement('img');
+            cacheImage.src = val;
+            cache.push(cacheImage);
+            $('<img/>')[0].src = val;
+        });
+        
+        console.log("[LOG] {SUCCESS} Preloaded: " + data.length + " images.");
+    } else {
+        console.warn("[LOG] {WARNING} Preloading has been disabled by the user.");
+        console.warn("[LOG] {WARNING} Or no images are available!?");
+    }
 });

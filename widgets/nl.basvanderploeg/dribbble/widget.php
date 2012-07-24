@@ -4,10 +4,9 @@
     <?php
     if (isset($config['nl.basvanderploeg']['dribbble']['data']) && is_array($config['nl.basvanderploeg']['dribbble']['data'])) {
         foreach ($config['nl.basvanderploeg']['dribbble']['data'] as $data) {
-            $api_data = Helper::makeCachedAPIRequest('http://api.dribbble.com/players/' . $data['username']);
-            $api_data = json_decode($api_data, true);
+            $api_data = json_decode(Helper::makeCachedAPIRequest('http://api.dribbble.com/players/' . $data['username']), true);
             ?>
-            <li>
+            <li data-refresh="false" data-id="nl.basvanderploeg.dribbble">
                 <div class="box" id="knop-dribbble">
                     <div class="dribbble-followers"><? echo $api_data['followers_count']; ?></div>
                     <div class="dribbble-following"><? echo $api_data['following_count']; ?></div>

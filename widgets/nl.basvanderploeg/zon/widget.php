@@ -32,7 +32,7 @@
         $sunset_time = date($time_format, strtotime(date("Y-m-d") . ' ' . $sunset));
         ?>
     
-        <li>
+        <li data-refresh="true" data-id="nl.basvanderploeg.zon" data-timeout="<?php echo TIME_MS_MINUTE; ?>">
             <div class="box" id="knop-dagnacht">
                 <div class="dag-text">
                     <?php echo $sunrise_time; ?>

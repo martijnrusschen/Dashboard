@@ -38,7 +38,7 @@ class Dashboard {
      */
     public function auth() {
         if (Config::$auth) {
-            if ($_SESSION['loggedin'] == 0) {
+            if ($_SESSION['loggedin'] != 1) {
                 header('Location: ' . Config::$auth_login);
                 die();
             }
@@ -65,6 +65,10 @@ class Dashboard {
             $_SESSION['login_error'] = Config::$auth_wrong_username;
         }
         $_SESSION['loggedin'] = 0;
+    }
+    public function logout() {
+        $_SESSION['loggedin'] = 0;
+        header('Location: ' . Config::$homepage);
     }
     
     /**
@@ -126,6 +130,8 @@ class Dashboard {
                         $this->_outputJSON(array('error' => 'Invalid Request!', 'code' => 'C-404'));
                         break;
                 }
+            } else if (isset($_GET['logout'])) {
+                $this->logout();
             } else {
                 if (Config::$clean_cache_onload) {
                     if (!isset($_GET['cache']) && $_GET['cache'] != 'clean') {

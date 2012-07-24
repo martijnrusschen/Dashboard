@@ -1,10 +1,10 @@
 <?php if (defined('BAS')) require dirname(__FILE__) . DS . 'config.php'; else die(); ?>
 <?php if (isset($config['nl.basvanderploeg']['wisselkoers']) && $config['nl.basvanderploeg']['wisselkoers']['enabled']) { ?>
     <!-- HTML / PHP -->
-    <li>
+    <li data-id="nl.basvanderploeg.wisselkoers" data-refresh="true" data-timeout="<?php echo TIME_MS_FIVE_MINUTE * 3; ?>">
         <div class="box" id="knop-currency"> 
-            <div class="currency-text currency-text-1"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=EURUSD=X&f=l1') ?></div>
-            <div class="currency-text currency-text-2"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=USDEUR=X&f=l1') ?></div>
+            <div class="currency-text currency-text-1"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=EURUSD=X&f=l1', TIME_FIVE_MINUTE * 3) ?></div>
+            <div class="currency-text currency-text-2"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=USDEUR=X&f=l1', TIME_FIVE_MINUTE * 3) ?></div>
             <div class="currency-text currency-text-3">1.00</div>
             <div class="currency-text currency-text-4">1.00</div>
         </div>

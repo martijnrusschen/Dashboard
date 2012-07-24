@@ -5,14 +5,14 @@
     if (isset($config['nl.basvanderploeg']['luchtvochtigheid']['data']) && is_array($config['nl.basvanderploeg']['luchtvochtigheid']['data'])) {
         foreach ($config['nl.basvanderploeg']['luchtvochtigheid']['data'] as $data) {
             if ($data['enabled']) {
-                $api_data = Helper::makeCachedAPIRequest('http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode']);
+                $api_data = Helper::makeCachedAPIRequest('http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode'], TIME_FIVE_MINUTE * 3);
                 $xml = simplexml_load_string($api_data);
 
                 $atmosfeer = $xml->xpath('//yweather:atmosphere');
                 $attributes = $atmosfeer[0]->attributes();
                 $vochtigheid = (string) $attributes['humidity'];
                 ?>
-                <li>
+                <li data-refresh="false" data-id="nl.basvanderploeg.luchtvochtigheid" data-timeout="<?php echo TIME_MS_FIVE_MINUTE * 3; ?>">
                     <div class="box" id="knop-meter">
                         <div id="progressContainer">
                             <?php

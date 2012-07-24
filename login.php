@@ -9,7 +9,7 @@ require LIB . DS . 'include.inc.php';
 
 $dash = new Dashboard();
 
-if (!Config::$auth || $_SESSION['loggedin'] == 1) { header('Location: index.php'); }
+if (!Config::$auth || isset($_SESSION['loggedin'])) { if ($_SESSION['loggedin'] == 1) header('Location: index.php'); }
 
 
 if (isset($_POST['username'], $_POST['password'])) {
@@ -30,22 +30,28 @@ if (isset($_POST['username'], $_POST['password'])) {
         <link type="text/plain" rel="author" href="humans.txt" />
 
         <!-- iOS Web App Settings -->
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
         
         <!-- iOS Web App Icon -->
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="core/img/icon-114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="core/img/icon-144.png" />
+        <link rel="apple-touch-icon" href="core/img/icon-57.png" sizes="57x57" ><!-- iPhone -->
+        <link rel="apple-touch-icon" href="core/img/icon-72.png" sizes="72x72" ><!-- iPad -->
+        <link rel="apple-touch-icon" href="core/img/icon-114.png" sizes="114x114" ><!-- iPhone (Retina) -->
+        <link rel="apple-touch-icon" href="core/img/icon-144.png" sizes="144x144" ><!-- iPad (Retina) -->
         
         <!-- iOS Web App Splash screen -->
-        <link href="core/img/iphone-landscape@2x.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-portrait@2x.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-landscape@2x.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/iphone-landscape.png" media="(device-width: 320px)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape)" rel="apple-touch-startup-image"/>
-
+        <link rel="apple-touch-startup-image" href="core/img/iphone-landscape.png" media="(device-width: 320px)" ><!-- iPhone -->
+        <link rel="apple-touch-startup-image" href="core/img/iphone-landscape@2x.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPhone (Retina) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-portrait.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image"><!-- iPad (portrait) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image"><!-- iPad (landscape) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-portrait@2x.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPad (Retina, portrait) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-landscape@2x.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPad (Retina, landscape) -->
+        
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        
         <!-- STYLE -->
         <link rel="stylesheet" href="core/css/style.css">
 
@@ -56,12 +62,19 @@ if (isset($_POST['username'], $_POST['password'])) {
     </head>
     <body>
         <div role="main" >
-            <form id="login-form" action="<?php echo Config::$auth_login; ?>" method="post">
-                <?php if (isset($_SESSION['login_error'])) { echo '<h3>' . $_SESSION['login_error'] . '</h3>'; } ?>
-                <input type="text" name="username" id="username" placeholder="Gebruikersnaam" /><br/>
-                <input type="password" name="password" id="password" placeholder="Wachtwoord" /><br/>
-                <input type="submit" name="submit" value="Login" />
-            </form>
+            <div id="login-div" style="background-image: url('<?php echo Config::$auth_backgrounds[Config::$auth_background]; ?>');">
+                <div id="cirkel">
+                    <img src="<?php echo (preg_match(Config::$mail_regex, Config::$auth_image)) ? Helper::getGravatar(Config::$auth_image) : Config::$auth_image; ?>" height="80px" width="80px"/>
+                </div>
+                <center>
+                    <form id="login-form" action="<?php echo Config::$auth_login; ?>" method="post">
+                        <?php if (isset($_SESSION['login_error'])) { echo '<h3>' . $_SESSION['login_error'] . '</h3>'; } ?>
+                        <input type="text" name="username" id="username" placeholder="Gebruikersnaam" class="textbox" /><br/>
+                        <input type="password" name="password" id="password" placeholder="Wachtwoord" class="textbox" /><br/>
+                        <input type="submit" name="submit" value="Login" class="loginbutton" />
+                    </form>
+                </center>   
+            </div> 
         </div>
         
         <header>

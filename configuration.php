@@ -38,6 +38,14 @@ class Config {
     public static $auth_wrong_username = 'Geen geldige gebruiker!';
     public static $auth_wrong_password = 'Geen geldig wachtwoord!';
     
+    // Login scherm avatar (Default: 'core/img/no-avatar@2x.png')
+    // Voor Gravatar vul je mail adres in
+    public static $auth_image = 'core/img/no-avatar@2x.png';
+    
+    // Achtergrond van login scherm
+    // Mogelijke waarde: stripe, clean
+    public static $auth_background = 'stripe'; // Verander in clean voor een achtergrond zonder lijn
+    
     /**
      * Widget instellingen 
      */
@@ -84,8 +92,10 @@ class Config {
     public static $auth_login = 'login.php';
     public static $widget_file = 'widget.php';
     public static $widget_config = 'config.php';
+    
     public static $ext_regex = '/.*(\%s)$/';
     public static $img_regex = '/.*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])$/';
+    public static $mail_regex = '/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/';
     
     public static $widgets_dir = 'widgets';
     public static $action_dir = 'actions';
@@ -99,6 +109,11 @@ class Config {
     public static $core_img_search =  'nl.basvanderploeg/core/img';
     public static $ignore_dirs = array('.htaccess', 'index.php', '.svn', '.', '..');
     public static $catch = true;
+    
+    public static $auth_backgrounds = array(
+        'stripe' => 'core/img/loginback@2x.png',
+        'clean' => 'core/img/loginbackclean@2x.png'
+    );
     
 }
 

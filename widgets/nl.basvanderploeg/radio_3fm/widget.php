@@ -1,15 +1,16 @@
 <?php if (defined('BAS')) require dirname(__FILE__) . DS . 'config.php'; else die(); ?>
 <?php if (isset($config['nl.basvanderploeg']['radio_3fm']) && $config['nl.basvanderploeg']['radio_3fm']['enabled']) { ?>
     <!-- HTML / PHP -->
-    <li>
-        <div class="box" id="knop-radio3fm" data-refresh="true" data-timeout="500" data-id="nl.basvanderploeg.radio_3fm">
+    <li data-id="nl.basvanderploeg.radio_3fm" data-refresh="true" data-timeout="<?php echo TIME_FIVE_MINUTE; ?>" >
+        <div class="box" id="knop-radio3fm">
             <div class="radio3fm-text"><a class="link-block" href="javascript:window.location.href='http://pilot.livecontent.omroep.nl/live/npo/visualradio/3fm_vsr_nf.isml/3fm_vsr_nf.m3u8'">3FM</a>
             </div>
 
             <div class="radio3fm-sub">
                 <marquee  direction="left" scrollamount="3" loop="90" width="89%">
                     <?php
-                    $xml = simplexml_load_file('http://www.3fm.nl/data/dalet/dalet.xml');
+                    $api_data = Helper::makeCachedAPIRequest('http://www.3fm.nl/data/dalet/dalet.xml');
+                    $xml = simplexml_load_string($api_data);
                     echo '&#9658; ' . $xml->artist . ' - ' . $xml->title;
                     ?>
                 </marquee>

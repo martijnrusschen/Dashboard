@@ -60,31 +60,20 @@
     if (isset($config['nl.basvanderploeg']['temperatuur']['data']) && is_array($config['nl.basvanderploeg']['temperatuur']['data'])) {
         foreach ($config['nl.basvanderploeg']['temperatuur']['data'] as $data) {
             if ($data['enabled']) {
-                $api_data = Helper::makeCachedAPIRequest('http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode']);
+                $api_data = Helper::makeCachedAPIRequest('http://weather.yahooapis.com/forecastrss?u=c&w=' . $data['plaatscode'], TIME_FIVE_MINUTE * 3);
                 $xml = simplexml_load_string($api_data);
 
                 $condition = $xml->xpath('//yweather:condition');
                 $attributes = $condition[0]->attributes();
                 $temperatuur = (string) $attributes['temp'];
-                $beschrijving = (string) $attributes['text'];
                 $weercode = (string) $attributes['code'];
 
                 $vooruitzicht = $xml->xpath('//yweather:forecast');
                 $attributes = $vooruitzicht[0]->attributes();
                 $hoogvandaag = (string) $attributes['high'];
                 $laagvandaag = (string) $attributes['low'];
-
-                $atmosfeer = $xml->xpath('//yweather:atmosphere');
-                $attributes = $atmosfeer[0]->attributes();
-                $vochtigheid = (string) $attributes['humidity'];
-
-                $wind = $xml->xpath('//yweather:wind');
-                $attributes = $wind[0]->attributes();
-                $windkracht = (string) $attributes['speed'];
-                $windrichting = (string) $attributes['direction'];
-                $gevoelstemp = (string) $attributes['chill'];
                 ?>
-                <li>
+                <li data-refresh="false" data-id="nl.basvanderploeg.temperatuur" data-timeout="<?php echo TIME_MS_FIVE_MINUTE * 3; ?>">
                     <div class="box" id="knop-temp">
                         <div class="temp-text"><?php echo $temperatuur; ?>&deg;</div>
                         <div class="temp-sub"><?php echo str_replace($oldWord, $newWord, $weercode); ?></div>

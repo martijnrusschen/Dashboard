@@ -26,22 +26,25 @@ $dash->init();
         <link type="text/plain" rel="author" href="humans.txt" />
 
         <!-- iOS Web App Settings -->
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
         
         <!-- iOS Web App Icon -->
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="core/img/icon-114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="core/img/icon-144.png" />
+        <link rel="apple-touch-icon" href="core/img/icon-57.png" sizes="57x57" ><!-- iPhone -->
+        <link rel="apple-touch-icon" href="core/img/icon-72.png" sizes="72x72" ><!-- iPad -->
+        <link rel="apple-touch-icon" href="core/img/icon-114.png" sizes="114x114" ><!-- iPhone (Retina) -->
+        <link rel="apple-touch-icon" href="core/img/icon-144.png" sizes="144x144" ><!-- iPad (Retina) -->
         
         <!-- iOS Web App Splash screen -->
-        <link href="core/img/iphone-landscape@2x.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-portrait@2x.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-landscape@2x.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
-        <link href="core/img/iphone-landscape.png" media="(device-width: 320px)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait)" rel="apple-touch-startup-image"/>
-        <link href="core/img/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape)" rel="apple-touch-startup-image"/>
-
+        <link rel="apple-touch-startup-image" href="core/img/iphone-landscape.png" media="(device-width: 320px)" ><!-- iPhone -->
+        <link rel="apple-touch-startup-image" href="core/img/iphone-landscape@2x.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPhone (Retina) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-portrait.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image"><!-- iPad (portrait) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image"><!-- iPad (landscape) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-portrait@2x.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPad (Retina, portrait) -->
+        <link rel="apple-touch-startup-image" href="core/img/ipad-landscape@2x.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"><!-- iPad (Retina, landscape) -->
+        
         <!-- FAVICON -->
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         

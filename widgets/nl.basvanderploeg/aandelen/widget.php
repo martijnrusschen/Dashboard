@@ -7,7 +7,7 @@
         as $data) {
             if ($data['enabled']) {
                 ?>
-                <li>
+                <li data-refresh="false" data-id="nl.basvanderploeg.aandelen">
                     <div class="box" id="knop-stocks">
                         <div class="stocks-text"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=l1'); ?></div>    
                         <div class="stocks-sub"><?php echo Helper::makeCachedAPIRequest('http://download.finance.yahoo.com/d/quotes.csv?s=' . $data['beurs'] . '&f=c1'); ?></div> 
